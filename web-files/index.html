@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — UI/UX Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <nav id="main-nav" style="display:none;">
+    <div class="nav-inner">
+      <a class="nav-logo" onclick="showPage('work')">Your Name</a>
+      <div class="nav-right">
+        <button class="nav-back" id="nav-back" onclick="showPage('work')">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="nav-links">
+          <a id="nav-work" class="active" onclick="showPage('work')">work</a>
+          <a id="nav-about" onclick="showPage('about')">about</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+   <!-- ═══ COMING SOON PAGE ═══ -->
+  <!-- TO REMOVE: delete this entire block when your portfolio is ready -->
+  <!-- <div class="page cs-page active" id="page-coming-soon">
+    <div class="cs-center">
+      <div class="cs-eyebrow">Coming soon</div>
+      <h1>Something<br><em>thoughtful</em><br>is on its way.</h1>
+      <p>My portfolio is currently under construction. I'm putting the finishing touches on my case studies — check back soon.</p>
+      <div class="cs-dots">
+        <div class="cs-dot active"></div>
+        <div class="cs-dot"></div>
+        <div class="cs-dot"></div>
+      </div>
+    </div>
+  </div> -->
+ 
+  <!-- ═══ WORK PAGE ═══ -->
+  <div class="page active" id="page-work">
+    <div class="wrap">
+      <div class="work-header fade-in">
+        <h1>Designing with<br><em>purpose</em> and<br>intention.</h1>
+        <p>UI/UX design student exploring the craft of human-centred digital experiences.</p>
+      </div>
+      <div class="project-grid">
+ 
+        <div class="project-card fade-in fade-in-1" onclick="showCase('mobile')">
+          <div class="project-thumb" style="background:#D8E8E1; color:#2D4A3E;"><span>Mobile App Redesign</span></div>
+          <!-- <div class="project-info">
+            <h3>Mobile App Redesign</h3>
+            <p class="desc">Improving onboarding for a fintech app — from user research through to high-fidelity prototype.</p>
+            <div class="tags">
+              <span class="tag" style="background:#E8F0EC; color:#2D4A3E;">UX Research</span>
+              <span class="tag" style="background:#E8F0EC; color:#2D4A3E;">Prototyping</span>
+              <span class="tag" style="background:#E8F0EC; color:#2D4A3E;">Figma</span>
+            </div>
+            <span class="view-link">View case study →</span>
+          </div> -->
+        </div>
+ 
+        <div class="project-card fade-in fade-in-2" onclick="showCase('ecommerce')">
+          <div class="project-thumb" style="background:#EAE0D8; color:#5C3D2E;"><span>E-commerce UX Audit</span></div>
+          <!-- <div class="project-info">
+            <h3>E-commerce UX Audit</h3>
+            <p class="desc">End-to-end evaluation of a retail checkout flow using heuristic analysis and usability testing.</p>
+            <div class="tags">
+              <span class="tag" style="background:#F2EBE5; color:#5C3D2E;">Usability Testing</span>
+              <span class="tag" style="background:#F2EBE5; color:#5C3D2E;">UI Design</span>
+            </div>
+            <span class="view-link">View case study →</span>
+          </div> -->
+        </div>
+ 
+        <div class="project-card fade-in fade-in-3" onclick="showCase('dashboard')">
+          <div class="project-thumb" style="background:#DDE0EA; color:#2D3654;"><span>Dashboard Concept</span></div>
+          <!-- <div class="project-info">
+            <h3>Dashboard Concept</h3>
+            <p class="desc">Data visualisation for a health-tracking platform — balancing clarity with aesthetic appeal.</p>
+            <div class="tags">
+              <span class="tag" style="background:#E8EAF2; color:#2D3654;">Visual Design</span>
+              <span class="tag" style="background:#E8EAF2; color:#2D3654;">Design Systems</span>
+            </div>
+            <span class="view-link">View case study →</span>
+          </div> -->
+        </div>
+ 
+        <div class="project-card fade-in fade-in-4" onclick="showCase('brand')">
+          <div class="project-thumb" style="background:#E8DDE8; color:#4A2D4A;"><span>Brand + Interface</span></div>
+          <!-- <div class="project-info">
+            <h3>Brand + Interface</h3>
+            <p class="desc">Identity system and app UI for a student project, from concept through to final screens.</p>
+            <div class="tags">
+              <span class="tag" style="background:#F0E8F0; color:#4A2D4A;">Branding</span>
+              <span class="tag" style="background:#F0E8F0; color:#4A2D4A;">Typography</span>
+            </div>
+            <span class="view-link">View case study →</span>
+          </div> -->
+        </div>
+ 
+      </div>
+    </div>
+    <footer><div class="footer-inner"><span>Your Name ︴ youremail@email.com</span><span>© 2026</span></div></footer>
+  </div>
+ 
+  <!-- ═══ CASE STUDY: MOBILE ═══ -->
+  <div class="page" id="page-case-mobile">
+    <div class="cs-hero" style="background:#D8E8E1; color:#2D4A3E;"><span>Mobile App Redesign</span></div>
+    <div class="wrap">
+      <div class="cs-header fade-in">
+        <div class="cs-meta">
+          <!-- <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">UX Designer (solo)</span></div>
+          <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">8 weeks</span></div>
+          <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-value">Figma, Maze, Miro</span></div> -->
+          <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span class="cs-meta-value">Student project</span></div>
+        </div>
+        <h1>Redesigning onboarding for a fintech mobile app</h1>
+        <p class="subtitle">Users were dropping off during sign-up at a 68% rate. This project investigated why, and redesigned the onboarding flow from the ground up.</p>
+      </div>
+      <div class="cs-body">
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">01 — Overview / Problem statement</p>
+          <h2>What was the problem?</h2>
+          <p>Add your problem statement here. Describe the challenge you were given, who the users are, and why this problem matters. What were the business goals? What were users struggling with?</p>
+          <p>Try to be specific — include any data or quotes that framed the problem. For example: "User interviews revealed that 5 out of 6 participants felt confused by the identity verification step."</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add a screenshot or diagram here — e.g. before/after, user flow, or problem framing</span>
+          </div>
+        </div>
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">02 — Research & Process</p>
+          <h2>How did you approach it?</h2>
+          <p>Describe your research methods. Did you conduct user interviews, surveys, competitive analysis, or usability tests? What did you find? Walk through your design process — sketches, wireframes, iterations.</p>
+          <p>This is where you show your thinking, not just the outcome. Recruiters and hiring managers care deeply about how you work.</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add wireframes, affinity maps, journey maps, or research notes here</span>
+          </div>
+        </div>
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">03 — Final Designs</p>
+          <h2>What did you design?</h2>
+          <p>Showcase your final screens here. Walk through the key design decisions — why did you choose this layout, colour system, or interaction pattern? What alternatives did you consider?</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add your final high-fidelity screens or prototype here</span>
+          </div>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add a second screen or interaction detail here</span>
+          </div>
+        </div>
+        <!-- <div class="cs-section fade-in">
+          <p class="cs-section-label">04 — Outcomes & Learnings</p>
+          <h2>What was the impact?</h2>
+          <div class="outcome-grid">
+            <div class="outcome-card"><div class="stat">↑ X%</div><div class="stat-label">Improvement in onboarding completion rate</div></div>
+            <div class="outcome-card"><div class="stat">↓ Xs</div><div class="stat-label">Reduction in average time to complete sign-up</div></div>
+            <div class="outcome-card"><div class="stat">X/5</div><div class="stat-label">Average usability score from test participants</div></div>
+          </div>
+          <p>Reflect on what you learned. What would you do differently? If you tested the designs, what did users say? What skills or insights did this project develop for you?</p>
+        </div> -->
+        <div class="cs-nav">
+          <button class="cs-nav-btn" onclick="showPage('work')">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            <div><div class="cs-nav-label">Back to</div><div class="cs-nav-title">All projects</div></div>
+          </button>
+          <button class="cs-nav-btn cs-nav-right" onclick="showCase('ecommerce')">
+            <div><div class="cs-nav-label">Next project</div><div class="cs-nav-title">E-commerce UX Audit</div></div>
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer><div class="footer-inner"><span>Your Name ︴ youremail@email.com</span><span>© 2026</span></div></footer>
+  </div>
+ 
+  <!-- ═══ CASE STUDY: ECOMMERCE ═══ -->
+  <div class="page" id="page-case-ecommerce">
+    <div class="cs-hero" style="background:#EAE0D8; color:#5C3D2E;"><span>E-commerce UX Audit</span></div>
+    <div class="wrap">
+      <div class="cs-header fade-in">
+        <div class="cs-meta">
+          <!-- <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">UX Researcher</span></div>
+          <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">6 weeks</span></div>
+          <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-value">Figma, Notion, Lookback</span></div> -->
+          <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span class="cs-meta-value">Student project</span></div>
+        </div>
+        <h1>UX audit of a retail checkout experience</h1>
+        <p class="subtitle">A heuristic evaluation and usability study of an existing e-commerce checkout flow, identifying friction points and proposing targeted improvements.</p>
+      </div>
+      <div class="cs-body">
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">01 — Overview / Problem statement</p>
+          <h2>What was the problem?</h2>
+          <p>Replace this with your own problem statement. What drew you to audit this particular product? What were users struggling with in the checkout flow?</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add a screenshot of the original interface or a problem framing diagram</span>
+          </div>
+        </div>
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">02 — Research & Process</p>
+          <h2>How did you approach it?</h2>
+          <p>Describe your audit methodology. Which heuristics did you apply? How many users did you test with? What tasks did you ask them to complete?</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add your heuristic analysis findings, user journey map, or test notes</span>
+          </div>
+        </div>
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">03 — Final Designs</p>
+          <h2>What did you redesign?</h2>
+          <p>Walk through your proposed improvements. Show before/after comparisons where possible — these are very compelling for reviewers.</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add before/after screens or your redesigned checkout flow here</span>
+          </div>
+        </div>
+        <!-- <div class="cs-section fade-in">
+          <p class="cs-section-label">04 — Outcomes & Learnings</p>
+          <h2>What was the impact?</h2>
+          <div class="outcome-grid">
+            <div class="outcome-card"><div class="stat">X</div><div class="stat-label">Usability issues identified and categorised</div></div>
+            <div class="outcome-card"><div class="stat">↑ X%</div><div class="stat-label">Task completion rate in redesigned prototype test</div></div>
+            <div class="outcome-card"><div class="stat">X</div><div class="stat-label">Key design recommendations delivered</div></div>
+          </div>
+          <p>What did you take away from this project? What surprised you about real users interacting with the product?</p>
+        </div> -->
+        <div class="cs-nav">
+          <button class="cs-nav-btn" onclick="showCase('mobile')">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            <div><div class="cs-nav-label">Previous</div><div class="cs-nav-title">Mobile App Redesign</div></div>
+          </button>
+          <button class="cs-nav-btn cs-nav-right" onclick="showCase('dashboard')">
+            <div><div class="cs-nav-label">Next project</div><div class="cs-nav-title">Dashboard Concept</div></div>
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer><div class="footer-inner"><span>Your Name ︴ youremail@email.com</span><span>© 2026</span></div></footer>
+  </div>
+ 
+  <!-- ═══ CASE STUDY: DASHBOARD ═══ -->
+  <div class="page" id="page-case-dashboard">
+    <div class="cs-hero" style="background:#DDE0EA; color:#2D3654;"><span>Dashboard Concept</span></div>
+    <div class="wrap">
+      <div class="cs-header fade-in">
+        <div class="cs-meta">
+          <!-- <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">UI/UX Designer</span></div>
+          <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">5 weeks</span></div>
+          <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-value">Figma, FigJam</span></div> -->
+          <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span class="cs-meta-value">Concept project</span></div>
+        </div>
+        <h1>Data visualisation for a health-tracking platform</h1>
+        <p class="subtitle">A concept dashboard designed to help users understand their health data at a glance — balancing information density with visual clarity.</p>
+      </div>
+      <div class="cs-body">
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">01 — Overview / Problem statement</p>
+          <h2>What was the problem?</h2>
+          <p>Describe the design challenge. Who are the users of this health dashboard and what decisions do they need to make? What existing solutions fall short?</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add a brief or problem framing visual here</span>
+          </div>
+        </div>
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">02 — Research & Process</p>
+          <h2>How did you approach it?</h2>
+          <p>What research did you do to understand how people read and use health data? Competitive analysis of existing apps? Card sorting to establish information hierarchy?</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add early sketches, wireframes, or information architecture here</span>
+          </div>
+        </div>
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">03 — Final Designs</p>
+          <h2>What did you design?</h2>
+          <p>Show your final dashboard screens. Explain the visual hierarchy decisions, colour system, and how you chose to represent different types of data.</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add your final dashboard UI screens here</span>
+          </div>
+        </div>
+        <!-- <div class="cs-section fade-in">
+          <p class="cs-section-label">04 — Outcomes & Learnings</p>
+          <h2>What was the impact?</h2>
+          <div class="outcome-grid">
+            <div class="outcome-card"><div class="stat">X</div><div class="stat-label">Data points surfaced in the primary view</div></div>
+            <div class="outcome-card"><div class="stat">X/5</div><div class="stat-label">Average ease-of-use rating from concept testing</div></div>
+            <div class="outcome-card"><div class="stat">↓ Xs</div><div class="stat-label">Time to find key metric vs. competitor</div></div>
+          </div>
+          <p>What did you learn about designing for data? What trade-offs did you make between density and simplicity?</p>
+        </div> -->
+        <div class="cs-nav">
+          <button class="cs-nav-btn" onclick="showCase('ecommerce')">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            <div><div class="cs-nav-label">Previous</div><div class="cs-nav-title">E-commerce UX Audit</div></div>
+          </button>
+          <button class="cs-nav-btn cs-nav-right" onclick="showCase('brand')">
+            <div><div class="cs-nav-label">Next project</div><div class="cs-nav-title">Brand + Interface</div></div>
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer><div class="footer-inner"><span>Your Name ︴ youremail@email.com</span><span>© 2026</span></div></footer>
+  </div>
+ 
+  <!-- ═══ CASE STUDY: BRAND ═══ -->
+  <div class="page" id="page-case-brand">
+    <div class="cs-hero" style="background:#E8DDE8; color:#4A2D4A;"><span>Brand + Interface</span></div>
+    <div class="wrap">
+      <div class="cs-header fade-in">
+        <div class="cs-meta">
+          <!-- <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">Brand + UI Designer</span></div>
+          <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">10 weeks</span></div>
+          <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-value">Figma, Illustrator</span></div> -->
+          <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span class="cs-meta-value">Student project</span></div>
+        </div>
+        <h1>A brand identity system and app interface concept</h1>
+        <p class="subtitle">Designing the visual language for a student project from scratch — logo, type system, colour palette, and key app screens.</p>
+      </div>
+      <div class="cs-body">
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">01 — Overview / Problem statement</p>
+          <h2>What was the problem?</h2>
+          <p>What brand were you designing for? What values did it need to communicate? Who is the target audience and what were their expectations?</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add a mood board, brief summary, or initial direction here</span>
+          </div>
+        </div>
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">02 — Research & Process</p>
+          <h2>How did you approach it?</h2>
+          <p>Walk through your brand exploration — mood boards, logo iterations, type pairing decisions. How did you arrive at your final visual direction?</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add logo explorations, type studies, or colour palette iterations here</span>
+          </div>
+        </div>
+        <div class="cs-section fade-in">
+          <p class="cs-section-label">03 — Final Designs</p>
+          <h2>What did you design?</h2>
+          <p>Show the final brand system and app screens. How does the brand identity translate into the digital interface? What components make up the design system?</p>
+          <div class="cs-image-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Add your final brand assets and app screens here</span>
+          </div>
+        </div>
+        <!-- <div class="cs-section fade-in">
+          <p class="cs-section-label">04 — Outcomes & Learnings</p>
+          <h2>What was the impact?</h2>
+          <div class="outcome-grid">
+            <div class="outcome-card"><div class="stat">X</div><div class="stat-label">Brand components in the design system</div></div>
+            <div class="outcome-card"><div class="stat">X</div><div class="stat-label">Key app screens designed end-to-end</div></div>
+            <div class="outcome-card"><div class="stat">X/5</div><div class="stat-label">Brand recall score from peer review</div></div>
+          </div>
+          <p>What did this project teach you about the relationship between brand and product design? What would you refine with more time?</p>
+        </div> -->
+        <div class="cs-nav">
+          <button class="cs-nav-btn" onclick="showCase('dashboard')">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            <div><div class="cs-nav-label">Previous</div><div class="cs-nav-title">Dashboard Concept</div></div>
+          </button>
+          <button class="cs-nav-btn cs-nav-right" onclick="showPage('work')">
+            <div><div class="cs-nav-label">Back to</div><div class="cs-nav-title">All projects</div></div>
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer><div class="footer-inner"><span>Your Name ︴ youremail@email.com</span><span>© 2026</span></div></footer>
+  </div>
+ 
+  <!-- ═══ ABOUT PAGE ═══ -->
+  <div class="page" id="page-about">
+    <div class="wrap">
+      <div class="about-header fade-in">
+        <h1>Designer, student,<br>and <em>curious human</em>.</h1>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo-wrap fade-in fade-in-1">
+          <div class="about-photo">Your photo here</div>
+          <div class="social-links">
+            <a href="https://linkedin.com" target="_blank"><span class="social-dot"></span>LinkedIn</a>
+            <a href="https://behance.net" target="_blank"><span class="social-dot"></span>Behance</a>
+            <a href="mailto:youremail@email.com"><span class="social-dot"></span>youremail@email.com</a>
+          </div>
+        </div>
+        <div class="about-content fade-in fade-in-2">
+          <p class="about-intro">Hi, I'm [Your Name] — a UI/UX design student passionate about creating experiences that feel intuitive, inclusive, and a little bit delightful.</p>
+          <p class="about-body">Currently studying at [Your University], I'm on the lookout for opportunities to bring thoughtful design to real-world products. I believe good design solves problems and tells stories at the same time — and I'm always trying to get better at both.<br><br>Add a second paragraph here about your approach, what draws you to UX, or a specific kind of work you're excited about.</p>
+          <div class="about-section">
+            <p class="section-label">Skills</p>
+            <div class="skill-grid">
+              <span class="skill-pill">Figma</span>
+              <span class="skill-pill">User Research</span>
+              <span class="skill-pill">Prototyping</span>
+              <span class="skill-pill">Wireframing</span>
+              <span class="skill-pill">Usability Testing</span>
+              <span class="skill-pill">Design Systems</span>
+              <span class="skill-pill">Visual Design</span>
+              <span class="skill-pill">HTML / CSS</span>
+              <span class="skill-pill">Information Architecture</span>
+            </div>
+          </div>
+          <div class="about-section">
+            <p class="section-label">Education</p>
+            <div class="edu-item">
+              <h5>[Your University]</h5>
+              <p>Bachelor of Design (UI/UX), expected [Year]</p>
+            </div>
+          </div>
+          <div class="about-section">
+            <p class="section-label">Beyond design</p>
+            <p style="font-size:15px; color:var(--muted); line-height:1.8;">Add a personal note here — what you're into outside of design, what drives your curiosity, or what kind of work excites you most. This is where your personality comes through, so make it genuinely yours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer><div class="footer-inner"><span>Your Name ︴ youremail@email.com</span><span>© 2026</span></div></footer>
+  </div>
+ 
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const caseIds = ['mobile', 'ecommerce', 'dashboard', 'brand'];
+  
+    const allPageIds = ['coming-soon', 'work', 'about', ...caseIds.map(c => 'case-' + c)];
+ 
+    function showPage(page) {
+      allPageIds.forEach(p => {
+        const el = document.getElementById('page-' + p);
+        if (el) el.classList.remove('active');
+      });
+      ['work', 'about'].forEach(n => {
+        const el = document.getElementById('nav-' + n);
+        if (el) el.classList.remove('active');
+      });
+ 
+      const target = document.getElementById('page-' + page);
+      if (target) target.classList.add('active');
+ 
+      const isCase = caseIds.includes(page);
+      document.getElementById('nav-back').classList.toggle('visible', isCase);
+ 
+      const nav = document.getElementById('main-nav');
+      nav.style.display = page === 'coming-soon' ? 'none' : 'block';
+ 
+      if (page === 'work') document.getElementById('nav-work').classList.add('active');
+      if (page === 'about') document.getElementById('nav-about').classList.add('active');
+ 
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+ 
+    function showCase(id) {
+      showPage('case-' + id);
+    }
+ 
+    let dotIndex = 0;
+    setInterval(() => {
+      const dots = document.querySelectorAll('.cs-dot');
+      dots.forEach((d, i) => d.classList.toggle('active', i === dotIndex));
+      dotIndex = (dotIndex + 1) % dots.length;
+    }, 900);
+  </script>
+</body>
+</html>
