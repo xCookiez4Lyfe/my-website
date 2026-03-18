@@ -13,13 +13,13 @@
 <body>
   <nav id="main-nav" style="display:fixed;">
     <div class="nav-inner">
-      <a class="nav-logo" onclick="showPage('work')">Your Name</a>
+      <a class="nav-logo" onclick="showPage('work')">Thanish J.</a>
       <div class="nav-right">
         <button class="nav-back" id="nav-back" onclick="showPage('work')">
         </button>
         <div class="nav-links">
-          <a id="nav-work" class="active" onclick="showPage('work')">work</a>
-          <a id="nav-about" onclick="showPage('about')">about</a>
+          <a id="nav-work" class="active" onclick="showPage('work')">Projects</a>
+          <a id="nav-about" onclick="showPage('about')">Info</a>
         </div>
       </div>
     </div>
@@ -44,77 +44,65 @@
   <div class="page active" id="page-work">
     <div class="wrap">
       <div class="work-header fade-in">
-        <h1>Designing with<br><em>purpose</em> and<br>intention.</h1>
-        <p>UI/UX design student exploring the craft of human-centred digital experiences.</p>
+        <h1>Aspiring UI/UX designer and avid <em>learner.</em> <br>I create digital art, websites and anything in between!</h1>
+        <!-- <p>A student who loves all things design! I create digital art, websites and anything in between :D</p> -->
       </div>
       <div class="project-grid">
+
+        <div class="project-card fade-in fade-in-1" onclick="showCase('mobile')">
+          <div class="project-thumb" style="background:#D8E8E1;">
+            <img src="images/matt-website.png" alt="MATT website thumbnail" />
+          </div>
+          <div class="project-overlay">
+            <h3>MATT website</h3>
+          </div>
+        </div>
  
         <div class="project-card fade-in fade-in-1" onclick="showCase('mobile')">
-          <div class="project-thumb" style="background:#D8E8E1; color:#2D4A3E;"><span>Mobile App Redesign</span></div>
-          <!-- <div class="project-info">
-            <h3>Mobile App Redesign</h3>
-            <p class="desc">Improving onboarding for a fintech app — from user research through to high-fidelity prototype.</p>
-            <div class="tags">
-              <span class="tag" style="background:#E8F0EC; color:#2D4A3E;">UX Research</span>
-              <span class="tag" style="background:#E8F0EC; color:#2D4A3E;">Prototyping</span>
-              <span class="tag" style="background:#E8F0EC; color:#2D4A3E;">Figma</span>
-            </div>
-            <span class="view-link">View case study →</span>
-          </div> -->
-        </div>
- 
-        <div class="project-card fade-in fade-in-2" onclick="showCase('ecommerce')">
-          <div class="project-thumb" style="background:#EAE0D8; color:#5C3D2E;"><span>E-commerce UX Audit</span></div>
-          <!-- <div class="project-info">
-            <h3>E-commerce UX Audit</h3>
-            <p class="desc">End-to-end evaluation of a retail checkout flow using heuristic analysis and usability testing.</p>
-            <div class="tags">
-              <span class="tag" style="background:#F2EBE5; color:#5C3D2E;">Usability Testing</span>
-              <span class="tag" style="background:#F2EBE5; color:#5C3D2E;">UI Design</span>
-            </div>
-            <span class="view-link">View case study →</span>
-          </div> -->
-        </div>
- 
-        <div class="project-card fade-in fade-in-3" onclick="showCase('dashboard')">
-          <div class="project-thumb" style="background:#DDE0EA; color:#2D3654;"><span>Dashboard Concept</span></div>
-          <!-- <div class="project-info">
-            <h3>Dashboard Concept</h3>
-            <p class="desc">Data visualisation for a health-tracking platform — balancing clarity with aesthetic appeal.</p>
-            <div class="tags">
-              <span class="tag" style="background:#E8EAF2; color:#2D3654;">Visual Design</span>
-              <span class="tag" style="background:#E8EAF2; color:#2D3654;">Design Systems</span>
-            </div>
-            <span class="view-link">View case study →</span>
-          </div> -->
-        </div>
- 
-        <div class="project-card fade-in fade-in-4" onclick="showCase('brand')">
-          <div class="project-thumb" style="background:#E8DDE8; color:#4A2D4A;"><span>Brand + Interface</span></div>
-          <!-- <div class="project-info">
-            <h3>Brand + Interface</h3>
-            <p class="desc">Identity system and app UI for a student project, from concept through to final screens.</p>
-            <div class="tags">
-              <span class="tag" style="background:#F0E8F0; color:#4A2D4A;">Branding</span>
-              <span class="tag" style="background:#F0E8F0; color:#4A2D4A;">Typography</span>
-            </div>
-            <span class="view-link">View case study →</span>
-          </div> -->
+          <div class="project-thumb" style="background:#D8E8E1;">
+            <img src="images/digital-futures.png" alt="Digital futures card game" />
+          </div>
+          <div class="project-overlay">
+            <h3>Interactive card game</h3>
+          </div>
         </div>
 
-        <div class="project-card fade-in fade-in-4" onclick="showCase('brand')">
-          <div class="project-thumb" style="background:#E8DDE8; color:#4A2D4A;"><span>Brand + Interface</span></div>
-          <!-- <div class="project-info">
-            <h3>Brand + Interface</h3>
-            <p class="desc">Identity system and app UI for a student project, from concept through to final screens.</p>
-            <div class="tags">
-              <span class="tag" style="background:#F0E8F0; color:#4A2D4A;">Branding</span>
-              <span class="tag" style="background:#F0E8F0; color:#4A2D4A;">Typography</span>
-            </div>
-            <span class="view-link">View case study →</span>
-          </div> -->
+        <div class="project-card fade-in fade-in-1" onclick="showCase('mobile')">
+          <div class="project-thumb" style="background:#D8E8E1;">
+            <img src="images/capstone- project.png" alt="Capstone project" />
+          </div>
+          <div class="project-overlay">
+            <h3>University capstone project</h3>
+          </div>
+        </div>
+
+        <div class="project-card fade-in fade-in-1" onclick="showCase('mobile')">
+          <div class="project-thumb" style="background:#D8E8E1;">
+            <img src="images/cancer-council.png" alt="Slip, slop, slap campaign" />
+          </div>
+          <div class="project-overlay">
+            <h3>Cancer Council campaign concept</h3>
+          </div>
         </div>
  
+        <div class="project-card fade-in fade-in-1" onclick="showCase('mobile')">
+          <div class="project-thumb" style="background:#D8E8E1;">
+            <img src="images/acrolex.png" alt="Acrolex law firm website" />
+          </div>
+          <div class="project-overlay">
+            <h3>Law firm website concept</h3>
+          </div>
+        </div>
+
+        <div class="project-card fade-in fade-in-1" onclick="showCase('mobile')">
+          <div class="project-thumb" style="background:#D8E8E1;">
+            <img src="images/smart-home.png" alt="Smart home app" />
+          </div>
+          <div class="project-overlay">
+            <h3>Smart home app concept</h3>
+          </div>
+        </div>
+
       </div>
     </div>
     <footer><div class="footer-inner"><span>Your Name ︴ youremail@email.com</span><span>© 2026</span></div></footer>
@@ -126,9 +114,6 @@
     <div class="wrap">
       <div class="cs-header fade-in">
         <div class="cs-meta">
-          <!-- <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">UX Designer (solo)</span></div>
-          <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">8 weeks</span></div>
-          <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-value">Figma, Maze, Miro</span></div> -->
           <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span class="cs-meta-value">Student project</span></div>
         </div>
         <h1>Redesigning onboarding for a fintech mobile app</h1>
@@ -168,16 +153,6 @@
             <span>Add a second screen or interaction detail here</span>
           </div>
         </div>
-        <!-- <div class="cs-section fade-in">
-          <p class="cs-section-label">04 — Outcomes & Learnings</p>
-          <h2>What was the impact?</h2>
-          <div class="outcome-grid">
-            <div class="outcome-card"><div class="stat">↑ X%</div><div class="stat-label">Improvement in onboarding completion rate</div></div>
-            <div class="outcome-card"><div class="stat">↓ Xs</div><div class="stat-label">Reduction in average time to complete sign-up</div></div>
-            <div class="outcome-card"><div class="stat">X/5</div><div class="stat-label">Average usability score from test participants</div></div>
-          </div>
-          <p>Reflect on what you learned. What would you do differently? If you tested the designs, what did users say? What skills or insights did this project develop for you?</p>
-        </div> -->
         <div class="cs-nav">
           <button class="cs-nav-btn" onclick="showPage('work')">
             <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
@@ -199,9 +174,6 @@
     <div class="wrap">
       <div class="cs-header fade-in">
         <div class="cs-meta">
-          <!-- <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">UX Researcher</span></div>
-          <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">6 weeks</span></div>
-          <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-value">Figma, Notion, Lookback</span></div> -->
           <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span class="cs-meta-value">Student project</span></div>
         </div>
         <h1>UX audit of a retail checkout experience</h1>
@@ -235,16 +207,6 @@
             <span>Add before/after screens or your redesigned checkout flow here</span>
           </div>
         </div>
-        <!-- <div class="cs-section fade-in">
-          <p class="cs-section-label">04 — Outcomes & Learnings</p>
-          <h2>What was the impact?</h2>
-          <div class="outcome-grid">
-            <div class="outcome-card"><div class="stat">X</div><div class="stat-label">Usability issues identified and categorised</div></div>
-            <div class="outcome-card"><div class="stat">↑ X%</div><div class="stat-label">Task completion rate in redesigned prototype test</div></div>
-            <div class="outcome-card"><div class="stat">X</div><div class="stat-label">Key design recommendations delivered</div></div>
-          </div>
-          <p>What did you take away from this project? What surprised you about real users interacting with the product?</p>
-        </div> -->
         <div class="cs-nav">
           <button class="cs-nav-btn" onclick="showCase('mobile')">
             <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
@@ -266,9 +228,6 @@
     <div class="wrap">
       <div class="cs-header fade-in">
         <div class="cs-meta">
-          <!-- <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">UI/UX Designer</span></div>
-          <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">5 weeks</span></div>
-          <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-value">Figma, FigJam</span></div> -->
           <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span class="cs-meta-value">Concept project</span></div>
         </div>
         <h1>Data visualisation for a health-tracking platform</h1>
@@ -302,16 +261,6 @@
             <span>Add your final dashboard UI screens here</span>
           </div>
         </div>
-        <!-- <div class="cs-section fade-in">
-          <p class="cs-section-label">04 — Outcomes & Learnings</p>
-          <h2>What was the impact?</h2>
-          <div class="outcome-grid">
-            <div class="outcome-card"><div class="stat">X</div><div class="stat-label">Data points surfaced in the primary view</div></div>
-            <div class="outcome-card"><div class="stat">X/5</div><div class="stat-label">Average ease-of-use rating from concept testing</div></div>
-            <div class="outcome-card"><div class="stat">↓ Xs</div><div class="stat-label">Time to find key metric vs. competitor</div></div>
-          </div>
-          <p>What did you learn about designing for data? What trade-offs did you make between density and simplicity?</p>
-        </div> -->
         <div class="cs-nav">
           <button class="cs-nav-btn" onclick="showCase('ecommerce')">
             <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
@@ -333,9 +282,6 @@
     <div class="wrap">
       <div class="cs-header fade-in">
         <div class="cs-meta">
-          <!-- <div class="cs-meta-item"><span class="cs-meta-label">Role</span><span class="cs-meta-value">Brand + UI Designer</span></div>
-          <div class="cs-meta-item"><span class="cs-meta-label">Timeline</span><span class="cs-meta-value">10 weeks</span></div>
-          <div class="cs-meta-item"><span class="cs-meta-label">Tools</span><span class="cs-meta-value">Figma, Illustrator</span></div> -->
           <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span class="cs-meta-value">Student project</span></div>
         </div>
         <h1>A brand identity system and app interface concept</h1>
@@ -368,17 +314,7 @@
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             <span>Add your final brand assets and app screens here</span>
           </div>
-        </div>
-        <!-- <div class="cs-section fade-in">
-          <p class="cs-section-label">04 — Outcomes & Learnings</p>
-          <h2>What was the impact?</h2>
-          <div class="outcome-grid">
-            <div class="outcome-card"><div class="stat">X</div><div class="stat-label">Brand components in the design system</div></div>
-            <div class="outcome-card"><div class="stat">X</div><div class="stat-label">Key app screens designed end-to-end</div></div>
-            <div class="outcome-card"><div class="stat">X/5</div><div class="stat-label">Brand recall score from peer review</div></div>
-          </div>
-          <p>What did this project teach you about the relationship between brand and product design? What would you refine with more time?</p>
-        </div> -->
+        </div>  
         <div class="cs-nav">
           <button class="cs-nav-btn" onclick="showCase('dashboard')">
             <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
