@@ -1,11 +1,11 @@
 :root {
-      --bg: #F7F5F0;
-      --surface: #FFFFFF;
-      --text: #1A1A18;
-      --muted: #6B6B68;
-      --border: rgba(26,26,24,0.1);
-      --accent: #2D4A3E;
-      --accent-light: #E8F0EC;
+      --bg: #ffffff;
+      --surface: #fafafa;
+      --text: #444444;
+      --muted: #505050;
+      --border: rgba(32, 32, 32, 0.1);
+      --accent: #006c97;
+      --accent-light: #e8edf0;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,7 +13,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background: var(--bg);
       color: var(--text);
       font-size: 16px;
@@ -26,10 +26,10 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(247,245,240,0.88);
+      background: #ffffff;
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      /* border-bottom: 1px solid var(--border); */
     }
     .nav-inner {
       max-width: 1280px;
@@ -41,7 +41,7 @@
       justify-content: space-between;
     }
     .nav-logo {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Figtree', serif;
       font-size: 18px;
       color: var(--text);
       text-decoration: none;
@@ -91,7 +91,7 @@
       gap: 2rem;
     }
     .work-header h1 {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Figtree', serif;
       font-size: clamp(2.4rem, 5vw, 3.8rem);
       font-weight: 400;
       line-height: 1.1;
@@ -99,7 +99,7 @@
       max-width: 520px;
     }
     .work-header h1 em {
-      font-style: italic;
+      /* font-style: italic; */
       color: var(--accent);
     }
     .work-header p {
@@ -135,9 +135,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Montserrat', serif;
       font-size: 1.1rem;
-      font-style: italic;
+      font-weight: 500;
+      /* font-style: italic; */
       letter-spacing: 0.01em;
       position: relative;
       overflow: hidden;
@@ -193,9 +194,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Figtree', serif;
       font-size: 1.4rem;
-      font-style: italic;
+      /* font-style: italic; */
       position: relative;
       overflow: hidden;
     }
@@ -222,7 +223,7 @@
     .cs-meta-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
     .cs-meta-value { font-size: 14px; color: var(--text); }
     .cs-header h1 {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Figtree', serif;
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 400;
       line-height: 1.15;
@@ -246,7 +247,7 @@
       border-bottom: 1px solid var(--border);
     }
     .cs-section h2 {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Montserrat', serif;
       font-size: 1.5rem;
       font-weight: 400;
       margin-bottom: 1rem;
@@ -317,7 +318,7 @@
       transition: color 0.2s;
       background: none;
       border: none;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Figtree', sans-serif;
       padding: 0;
     }
     .cs-nav-btn:hover { color: var(--text); }
@@ -333,13 +334,13 @@
       margin-bottom: 3.5rem;
     }
     .about-header h1 {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Figtree', serif;
       font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 400;
       line-height: 1.2;
       max-width: 700px;
     }
-    .about-header h1 em { font-style: italic; color: var(--accent); }
+    .about-header h1 em { color: var(--accent); }
 
     .about-grid {
       display: grid;
@@ -391,7 +392,7 @@
 
     .about-content { padding-top: 0.5rem; }
     .about-intro {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Montserrat', serif;
       font-size: 1.35rem;
       line-height: 1.55;
       font-weight: 400;
@@ -471,21 +472,21 @@
       display: block;
     } */
     .cs-page h1 {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Figtree', serif;
       font-size: clamp(2.6rem, 6vw, 4.2rem);
       font-weight: 400;
       line-height: 1.1;
       letter-spacing: -0.02em;
       margin-bottom: 1.25rem;
     }
-    .cs-page h1 em { font-style: italic; color: var(--accent); }
+    .cs-page h1 em { color: var(--accent); }
     .cs-page p {
       font-size: 16px;
       color: var(--muted);
       line-height: 1.75;
       margin-bottom: 2.5rem;
     }
-    .cs-email-form {
+    /* .cs-email-form {
       display: flex;
       gap: 8px;
       justify-content: center;
@@ -524,7 +525,7 @@
       color: var(--accent);
       margin-top: 1rem;
       min-height: 20px;
-    }
+    } */
     .cs-dots {
       display: flex;
       gap: 8px;

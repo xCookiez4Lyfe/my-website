@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name — UI/UX Designer</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-  <nav id="main-nav" style="display:none;">
+  <nav id="main-nav" style="display:fixed;">
     <div class="nav-inner">
       <a class="nav-logo" onclick="showPage('work')">Your Name</a>
       <div class="nav-right">
         <button class="nav-back" id="nav-back" onclick="showPage('work')">
-          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
         <div class="nav-links">
           <a id="nav-work" class="active" onclick="showPage('work')">work</a>
@@ -87,6 +89,19 @@
           </div> -->
         </div>
  
+        <div class="project-card fade-in fade-in-4" onclick="showCase('brand')">
+          <div class="project-thumb" style="background:#E8DDE8; color:#4A2D4A;"><span>Brand + Interface</span></div>
+          <!-- <div class="project-info">
+            <h3>Brand + Interface</h3>
+            <p class="desc">Identity system and app UI for a student project, from concept through to final screens.</p>
+            <div class="tags">
+              <span class="tag" style="background:#F0E8F0; color:#4A2D4A;">Branding</span>
+              <span class="tag" style="background:#F0E8F0; color:#4A2D4A;">Typography</span>
+            </div>
+            <span class="view-link">View case study →</span>
+          </div> -->
+        </div>
+
         <div class="project-card fade-in fade-in-4" onclick="showCase('brand')">
           <div class="project-thumb" style="background:#E8DDE8; color:#4A2D4A;"><span>Brand + Interface</span></div>
           <!-- <div class="project-info">
