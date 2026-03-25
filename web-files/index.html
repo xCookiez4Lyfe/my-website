@@ -13,7 +13,7 @@
 <body>
   <nav id="main-nav" style="display:fixed;">
     <div class="nav-inner">
-      <a class="nav-logo" onclick="showPage('work')">Thanish J</a>
+      <a class="nav-logo" onclick="showPage('work')"><img src="images/portfolio-logo-new.png" alt="TJ Logo" /></a>
       <div class="nav-right">
         <button class="nav-back" id="nav-back" onclick="showPage('work')">
         </button>
@@ -334,7 +334,7 @@
   <div class="page" id="page-about">
     <div class="wrap">
       <div class="about-header fade-in">
-        <h1>Designer, student,<br>and <em>curious human</em>.</h1>
+        <h1 id="typewriter-heading" aria-label="Currently learning: Advanced Figma prototyping"></h1>
       </div>
       <div class="about-grid">
         <div class="about-photo-wrap fade-in fade-in-1">
@@ -347,7 +347,7 @@
         </div>
         <div class="about-content fade-in fade-in-2">
           <p class="about-intro">Hey, I'm Thanish!</p>
-          <p class="about-body">I recently graduated from Monash University with a Bachelor of Information Technology, majoring in Immersive Media. I started my journey at the intersection of front-end development and game design. Over time, I’ve evolved from simply crafting digital experiences in the classroom to questioning who I’m building them for and why it matters! Being part of a student-led assistive tech team was a huge part of my university experience, as it sparked an interest in accessible and user-centered digital experiences.<br><br>As someone who is curious, ambitious, and loves to solve problems, I’m looking for my next big challenge to build digital experiences that are visually appealing and accessible to all :)</p>
+          <p class="about-body">I recently graduated from Monash University with a Bachelor of Information Technology, majoring in Immersive Media. I started my journey at the intersection of front-end development and game design. Over time, I’ve evolved from simply crafting digital experiences in the classroom to questioning who I’m building them for and why it matters! Being part of a student-led assistive tech team was a huge part of my university experience, as it sparked an interest in accessible and user-centered digital experiences.<br><br>As someone who loves solving real world problems, I’m looking for my next big challenge to build digital experiences that are visually appealing and accessible to all :)</p>
           <div class="about-section">
             <p class="section-label">Skills</p>
             <div class="skill-grid">
@@ -404,13 +404,67 @@
       nav.style.display = page === 'coming-soon' ? 'none' : 'block';
  
       if (page === 'work') document.getElementById('nav-work').classList.add('active');
-      if (page === 'about') document.getElementById('nav-about').classList.add('active');
+      if (page === 'about') {
+        document.getElementById('nav-about').classList.add('active');
+        runTypewriter();
+      }
  
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
  
     function showCase(id) {
       showPage('case-' + id);
+    }
+ 
+    /* Typewriter for about heading */
+    const twSegments = [
+      { text: 'Currently learning: ', italic: false },
+      { text: 'Advanced Figma Prototyping', italic: true }
+    ];
+ 
+    function runTypewriter() {
+      const el = document.getElementById('typewriter-heading');
+      if (!el) return;
+      el.innerHTML = '';
+      let segIndex = 0, charIndex = 0;
+      let currentSpan = null;
+ 
+      function type() {
+        if (segIndex >= twSegments.length) {
+          el.classList.remove('typing');
+          return;
+        }
+        const seg = twSegments[segIndex];
+        if (charIndex === 0) {
+          if (seg.text.startsWith('\n')) {
+            el.appendChild(document.createElement('br'));
+            twSegments[segIndex] = { ...seg, text: seg.text.slice(1) };
+          }
+          currentSpan = document.createElement(seg.italic ? 'em' : 'span');
+          el.appendChild(currentSpan);
+        }
+        currentSpan.textContent += seg.text[charIndex];
+        charIndex++;
+        if (charIndex >= seg.text.length) {
+          segIndex++;
+          charIndex = 0;
+        }
+        setTimeout(type, segIndex === twSegments.length ? 60 : 45);
+      }
+ 
+      el.classList.add('typing');
+      setTimeout(type, 300);
+    }
+ 
+    function handleNotify() {
+      const input = document.getElementById('notify-email');
+      const confirm = document.getElementById('cs-confirm');
+      if (input.value && input.value.includes('@')) {
+        confirm.textContent = "Thanks! I'll let you know when it's live.";
+        input.value = '';
+      } else {
+        confirm.textContent = 'Please enter a valid email address.';
+      }
     }
  
     let dotIndex = 0;
