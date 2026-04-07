@@ -49,7 +49,7 @@
     }
     .nav-logo img {
       width: 100%;
-      height: 60px;
+      height: 50px;
       object-fit: contain;
       display: block;
     }
@@ -74,6 +74,22 @@
       color: var(--text);
       border-bottom-color: var(--text);
     }
+    .nav-back {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color 0.2s;
+      border: none;
+      background: none;
+      font-family: 'DM Sans', sans-serif;
+      padding: 0;
+    }
+    .nav-back:hover { color: var(--text); }
+    .nav-back.visible { display: flex; }
+    .nav-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
 
     /* PAGES */
     .page { display: none; padding-top: 60px; }
