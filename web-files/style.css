@@ -631,6 +631,21 @@
 
     /* RESPONSIVE */
     @media (max-width: 720px) {
+      body { font-size: 14px; }
+      .nav-links a { font-size: 14px; }
+
+      .work-header h1 { font-size: clamp(1.35rem, 6vw, 1.6rem); }
+      .cs-header h1 { font-size: clamp(1.5rem, 7vw, 1.9rem); }
+      .cs-header .subtitle { font-size: 14px; line-height: 1.6; }
+      .cs-section h2 { font-size: 1.25rem; }
+      .cs-section p { font-size: 14px; line-height: 1.7; }
+
+      .about-header h1 { font-size: clamp(1.35rem, 6vw, 1.6rem); }
+      .about-intro { font-size: 1.35rem; }
+      .about-body { font-size: 14px; line-height: 1.7; }
+      .section-label { font-size: 10px; }
+      .skill-pill { font-size: 12px; }
+
       .project-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; }
       .about-photo-wrap { position: static; }
@@ -640,8 +655,10 @@
       .footer-inner {
         flex-direction: row;
         align-items: flex-start;
-        gap: 0.9rem;
+        gap: 1rem;
+        font-size: 13px;
       }
+      .footer-contact { width: 500px; height: 30px; }
       .footer-right {
         width: 100%;
         justify-content: right;
