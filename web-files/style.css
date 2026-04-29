@@ -40,13 +40,13 @@
       align-items: center;
       justify-content: space-between;
     }
-    /* .nav-logo {
+    .nav-logo {
       font-family: 'Figtree', serif;
       font-size: 24px;
       color: var(--text);
       text-decoration: none;
       cursor: pointer;
-    } */
+    }
     .nav-logo img {
       width: 100%;
       height: 50px;
@@ -303,27 +303,6 @@
     .cs-image-placeholder svg { width: 28px; height: 28px; stroke: var(--muted); fill: none; stroke-width: 1.5; opacity: 0.4; }
     .cs-image-placeholder span { opacity: 0.55; max-width: 300px; line-height: 1.5; }
  
-    /* .outcome-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-    .outcome-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem;
-    }
-    .outcome-card .stat {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .outcome-card .stat-label { font-size: 13px; color: var(--muted); line-height: 1.4; } */
- 
     .cs-nav {
       display: flex;
       justify-content: space-between;
@@ -368,7 +347,7 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 500px 1fr;
+      grid-template-columns: 450px 1fr;
       gap: 4rem;
       align-items: start;
       margin-bottom: 6rem;
@@ -382,7 +361,7 @@
       aspect-ratio: 3/4;
       background: #D8D4CC;
       border-radius: 16px;
-      border: 1px solid var(--border);
+      /* border: 1px solid var(--border); */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -462,107 +441,6 @@
     .edu-item { margin-bottom: 1.25rem; }
     .edu-item h5 { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
     .edu-item p { font-size: 13px; color: var(--muted); }
-
-    /* ── COMING SOON PAGE ── */
-    .cs-page {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-    .cs-page.page { padding-top: 0; }
-    .cs-page.active { display: flex; }
-    .cs-center {
-      text-align: center;
-      max-width: 520px;
-    }
-    .cs-eyebrow {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-    /* .cs-eyebrow::before, .cs-eyebrow::after {
-      content: '';
-      width: 32px;
-      height: 1px;
-      background: var(--border);
-      display: block;
-    } */
-    .cs-page h1 {
-      font-family: 'Figtree', serif;
-      font-size: clamp(2.6rem, 6vw, 4.2rem);
-      font-weight: 400;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
-    }
-    .cs-page h1 em { color: var(--accent); }
-    .cs-page p {
-      font-size: 16px;
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 2.5rem;
-    }
-    /* .cs-email-form {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .cs-email-form input {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      padding: 10px 16px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--surface);
-      color: var(--text);
-      width: 240px;
-      outline: none;
-      transition: border-color 0.15s;
-    }
-    .cs-email-form input:focus { border-color: var(--accent); }
-    .cs-email-form input::placeholder { color: var(--muted); }
-    .cs-email-form button {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: 1px solid var(--text);
-      background: var(--text);
-      color: var(--bg);
-      cursor: pointer;
-      transition: opacity 0.15s;
-      letter-spacing: 0.02em;
-    }
-    .cs-email-form button:hover { opacity: 0.8; }
-    .cs-confirm {
-      font-size: 13px;
-      color: var(--accent);
-      margin-top: 1rem;
-      min-height: 20px;
-    } */
-    .cs-dots {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      margin-bottom: 2.5rem;
-    }
-    .cs-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--border);
-    }
-    .cs-dot.active { background: var(--accent); }
 
     /* FOOTER */
     footer {
