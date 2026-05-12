@@ -35,7 +35,7 @@
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 2rem;
-      height: 80px;
+      height: 75px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -104,22 +104,22 @@
 
     /* ── WORK PAGE ── */
     .work-header {
-      padding: 5rem 0 4rem;
+      padding: 4.5rem 0 4.5rem;
       border-bottom: 1px solid var(--border);
       margin-bottom: 3.5rem;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       gap: 2rem;
     }
     .work-header h1 {
       font-family: 'Figtree', serif;
-      font-size: clamp(2rem, 4vw, 1.8rem);
+      font-size: 2rem;
       /* font-size: 2rem; */
       font-weight: 400;
       line-height: 1.2;
-      max-width: 960px;
-      text-align: left;
+      max-width: 840px;
+      text-align: center;
 
     }
     .work-header h1 em {
@@ -234,8 +234,8 @@
  
     .cs-header {
       padding: 3rem 0 2.5rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 3rem;
+      /* border-bottom: 1px solid var(--border); */
+      margin-bottom: 2rem;
     }
     .cs-meta {
       display: flex;
@@ -332,13 +332,13 @@
 
     /* ── ABOUT PAGE ── */
     .about-header {
-      padding: 5rem 0 3.5rem;
+      padding: 4.5rem 0 4.5rem;
       border-bottom: 1px solid var(--border);
       margin-bottom: 3.5rem;
     }
     .about-header h1 {
       font-family: 'Figtree', serif;
-      font-size: clamp(2rem, 4vw, 1.8rem);
+      font-size: 2.5rem;
       font-weight: 400;
       line-height: 1.2;
       max-width: 1280px;
@@ -348,7 +348,7 @@
     .about-grid {
       display: grid;
       grid-template-columns: 500px 1fr;
-      gap: 4rem;
+      gap: 3.5rem;
       align-items: center;
       margin-bottom: 2rem;
     }
@@ -357,7 +357,7 @@
       top: 80px;
     }
     .about-photo {
-      width: 90%;
+      width: 100%;
       aspect-ratio: 3/4;
       background: #D8D4CC;
       border-radius: 16px;
