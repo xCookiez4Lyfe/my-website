@@ -371,7 +371,7 @@
       grid-template-columns: 500px 1fr;
       gap: 4rem;
       align-items: start;
-      margin-bottom: 6rem;
+      margin-bottom: 2rem;
     }
     .about-photo-wrap {
       position: sticky;
