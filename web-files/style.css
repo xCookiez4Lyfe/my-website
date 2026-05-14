@@ -233,9 +233,9 @@
     .cs-hero span { position: relative; z-index: 1; }
  
     .cs-header {
-      padding: 3rem 0 2.5rem;
+      padding: 3.5rem 0 2.5rem;
       /* border-bottom: 1px solid var(--border); */
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
     .cs-meta {
       display: flex;
@@ -252,10 +252,10 @@
       font-weight: 400;
       line-height: 1.15;
       letter-spacing: -0.02em;
-      max-width: 700px;
-      margin-bottom: 1rem;
+      max-width: 750px;
+      margin-bottom: 1.5rem;
     }
-    .cs-header .subtitle { font-size: 16px; color: var(--muted); max-width: 720px; line-height: 1.7; }
+    .cs-header .subtitle { font-size: 16px; color: var(--muted); max-width: 700px; line-height: 1.7; text-align: justify; }
  
     .cs-body { max-width: 1280px; margin: 0 auto; padding-bottom: 6rem; }
  
@@ -313,22 +313,27 @@
       margin-top: 1rem;
     }
     .cs-nav-btn {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 8px;
-      transition: color 0.2s;
+      transition: color 0.2s ease, transform 0.2s ease;
       background: none;
       border: none;
       font-family: 'Figtree', sans-serif;
       padding: 0;
     }
-    .cs-nav-btn:hover { color: var(--text); }
-    .cs-nav-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; }
-    .cs-nav-label { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2px; color: var(--muted); }
-    .cs-nav-title { font-size: 14px; font-weight: 500; color: var(--text); }
+    /* Hover directions: left buttons move left, right buttons move right */
+    .cs-nav-btn:hover { color: #006c97; }
+    .cs-nav-left:hover { transform: translateX(-4px); }
+    .cs-nav-left:hover svg { transform: translateX(-2px); }
+    .cs-nav-right:hover { transform: translateX(4px); }
+    .cs-nav-right:hover svg { transform: translateX(2px); }
+    .cs-nav-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; transition: transform 0.2s ease; }
+    .cs-nav-label { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2px; color: var(--muted); text-align: left;}
+    .cs-nav-title { font-size: 15px; font-weight: 500; color: var(--text); }
     .cs-nav-right { text-align: right; }
 
     /* ── ABOUT PAGE ── */
@@ -350,8 +355,8 @@
       display: grid;
       grid-template-columns: 500px 1fr;
       gap: 3.5rem;
-      align-items: center;
-      margin-bottom: 2rem;
+      align-items: flex-start;
+      margin-bottom: 3.5rem;
     }
     .about-photo-wrap {
       position: sticky;
@@ -396,10 +401,10 @@
     .about-content { padding-top: 0.5rem; }
     .about-intro {
       font-family: 'Montserrat', serif;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       line-height: 1.55;
       font-weight: 400;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.2rem;
     }
     .about-body {
       font-size: 15px;
