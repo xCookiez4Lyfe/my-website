@@ -569,8 +569,8 @@
         padding: 0 2rem;
 
       }
-      .nav-logo img {
-      width: 100%;
+      .nav-logo {
+      width: 25%;
       object-fit: contain;
       display: block;
     }
