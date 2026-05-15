@@ -223,6 +223,8 @@
       /* font-style: italic; */
       position: relative;
       overflow: hidden;
+      background-size:contain; 
+      background-position:center; color:#ffffff;
     }
     .cs-hero::after {
       content: '';
@@ -335,6 +337,17 @@
     .cs-nav-label { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2px; color: var(--muted); text-align: left;}
     .cs-nav-title { font-size: 15px; font-weight: 500; color: var(--text); }
     .cs-nav-right { text-align: right; }
+
+    .cs-hero-text {
+      max-width:1280px; 
+      margin:0 auto; 
+      padding: 0 2rem; 
+      width:100%; 
+      box-sizing:border-box; 
+      text-align:left; 
+      font-size: 48px; 
+      font-weight: 600;
+    }
 
     /* ── ABOUT PAGE ── */
     .about-header {
@@ -517,23 +530,42 @@
       body { font-size: 14px; }
       .nav-links a { font-size: 14px; }
 
-      .work-header h1 { font-size: clamp(1.35rem, 6vw, 1.6rem); }
+      .work-header h1 { font-size: 1.35rem; }
       .cs-header h1 { font-size: clamp(1.5rem, 7vw, 1.9rem); }
       .cs-header .subtitle { font-size: 14px; line-height: 1.6; }
       .cs-section h2 { font-size: 1.25rem; }
       .cs-section p { font-size: 14px; line-height: 1.7; }
+      .cs-hero {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background-size: contain;
+      }
+      .cs-hero-text {
+      max-width:600px; 
+      margin:0 auto; 
+      padding: 0 2rem; 
+      width:100%; 
+      box-sizing:border-box; 
+      text-align:left; 
+      font-size: 1rem; 
+      font-weight: 600;
+    }
       .nav-inner {
         margin: 0 auto;
         padding: 0 2rem;
 
       }
       .nav-logo img {
-      width: 30%;
+      width: 25%;
       height: 50px;
       object-fit: contain;
       display: block;
     }
-      .about-header h1 { font-size: clamp(1.35rem, 6vw, 1.6rem); }
+      .about-header h1 { font-size: 1.35rem; }
+      .about-header {
+      padding: 3rem 0 3rem;
+      margin-bottom: 2.5rem;
+    }
       .about-intro { font-size: 1.35rem; }
       .about-body { font-size: 14px; line-height: 1.7; }
       .section-label { font-size: 10px; }
