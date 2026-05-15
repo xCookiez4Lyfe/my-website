@@ -533,7 +533,8 @@
     @media (max-width: 720px) {
       body { font-size: 14px; }
       .nav-links a { font-size: 14px; }
-
+      .project-grid { margin-bottom: 3rem;}
+      .about-grid { margin-bottom: 3rem; }
       .work-header h1 { font-size: 1.2rem; }
       .work-header {
           padding: 3rem 0 3rem;
