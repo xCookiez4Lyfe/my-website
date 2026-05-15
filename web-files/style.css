@@ -272,6 +272,10 @@
       padding-bottom: 0.6rem;
       border-bottom: 1px solid var(--border);
     }
+    .cs-section ul {
+      padding-left: 1.5rem; 
+      font-size: 14px;
+    }
     .cs-section h2 {
       font-family: 'Montserrat', serif;
       font-size: 1.5rem;
@@ -530,9 +534,12 @@
       body { font-size: 14px; }
       .nav-links a { font-size: 14px; }
 
-      .work-header h1 { font-size: 1.3rem; }
+      .work-header h1 { font-size: 1.2rem; }
+      .work-header {
+          padding: 3rem 0 3rem;
+      }
       .cs-header {
-        padding: 0.5rem 0 2.5rem;
+        padding: 2.5rem 0 2.5rem;
         margin-bottom: 1rem;
       }
       .cs-header h1 { font-size: 1.4rem }
@@ -540,11 +547,12 @@
       .cs-section h2 { font-size: 1rem; }
       .cs-section p { font-size: 12px; line-height: 1.7; }
       .cs-hero {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center center;
+        margin: 0 auto;
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
       }
       .cs-hero-text {
       max-width:800px; 
@@ -555,15 +563,14 @@
       text-align:left; 
       font-size: 0.8rem; 
       font-weight: 600;
-    }
+      }
       .nav-inner {
         margin: 0 auto;
         padding: 0 2rem;
 
       }
       .nav-logo img {
-      width: 25%;
-      height: 50px;
+      width: 100%;
       object-fit: contain;
       display: block;
     }
