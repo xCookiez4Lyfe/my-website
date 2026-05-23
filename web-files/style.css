@@ -35,18 +35,18 @@
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 2rem;
-      height: 80px;
+      height: 75px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .nav-logo {
+    /* .nav-logo {
       font-family: 'Figtree', serif;
       font-size: 24px;
       color: var(--text);
       text-decoration: none;
       cursor: pointer;
-    }
+    } */
     .nav-logo img {
       width: 100%;
       height: 50px;
@@ -104,22 +104,22 @@
 
     /* ── WORK PAGE ── */
     .work-header {
-      padding: 5rem 0 3.5rem;
+      padding: 4.5rem 0 4.5rem;
       border-bottom: 1px solid var(--border);
       margin-bottom: 3.5rem;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       gap: 2rem;
     }
     .work-header h1 {
       font-family: 'Figtree', serif;
-      font-size: clamp(2rem, 4vw, 1.8rem);
+      font-size: 2rem;
       /* font-size: 2rem; */
       font-weight: 400;
       line-height: 1.2;
-      max-width: 1080px;
-      text-align: left;
+      max-width: 840px;
+      text-align: center;
 
     }
     .work-header h1 em {
@@ -214,7 +214,7 @@
     /* ── CASE STUDY PAGES ── */
     .cs-hero {
       width: 100%;
-      aspect-ratio: 21/6;
+      aspect-ratio: 21/7;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -223,6 +223,8 @@
       /* font-style: italic; */
       position: relative;
       overflow: hidden;
+      background-size:contain; 
+      background-position:center; color:#ffffff;
     }
     .cs-hero::after {
       content: '';
@@ -233,9 +235,9 @@
     .cs-hero span { position: relative; z-index: 1; }
  
     .cs-header {
-      padding: 3rem 0 2.5rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 3rem;
+      padding: 3.5rem 0 2.5rem;
+      /* border-bottom: 1px solid var(--border); */
+      margin-bottom: 2.5rem;
     }
     .cs-meta {
       display: flex;
@@ -252,10 +254,10 @@
       font-weight: 400;
       line-height: 1.15;
       letter-spacing: -0.02em;
-      max-width: 700px;
-      margin-bottom: 1rem;
+      max-width: 750px;
+      margin-bottom: 1.5rem;
     }
-    .cs-header .subtitle { font-size: 16px; color: var(--muted); max-width: 600px; line-height: 1.7; }
+    .cs-header .subtitle { font-size: 16px; color: var(--muted); max-width: 700px; line-height: 1.7; text-align: justify; }
  
     .cs-body { max-width: 1280px; margin: 0 auto; padding-bottom: 6rem; }
  
@@ -270,6 +272,10 @@
       padding-bottom: 0.6rem;
       border-bottom: 1px solid var(--border);
     }
+    .cs-section ul {
+      padding-left: 1.5rem; 
+      font-size: 14px;
+    }
     .cs-section h2 {
       font-family: 'Montserrat', serif;
       font-size: 1.5rem;
@@ -282,6 +288,7 @@
       color: var(--muted);
       line-height: 1.85;
       margin-bottom: 1rem;
+      text-align: justify;
     }
     .cs-section p:last-child { margin-bottom: 0; }
  
@@ -312,33 +319,49 @@
       margin-top: 1rem;
     }
     .cs-nav-btn {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 8px;
-      transition: color 0.2s;
+      transition: color 0.2s ease, transform 0.2s ease;
       background: none;
       border: none;
       font-family: 'Figtree', sans-serif;
       padding: 0;
     }
-    .cs-nav-btn:hover { color: var(--text); }
-    .cs-nav-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; }
-    .cs-nav-label { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2px; color: var(--muted); }
-    .cs-nav-title { font-size: 14px; font-weight: 500; color: var(--text); }
+    /* Hover directions: left buttons move left, right buttons move right */
+    .cs-nav-btn:hover { color: #006c97; }
+    .cs-nav-left:hover { transform: translateX(-4px); }
+    .cs-nav-left:hover svg { transform: translateX(-2px); }
+    .cs-nav-right:hover { transform: translateX(4px); }
+    .cs-nav-right:hover svg { transform: translateX(2px); }
+    .cs-nav-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; transition: transform 0.2s ease; }
+    .cs-nav-label { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2px; color: var(--muted); text-align: left;}
+    .cs-nav-title { font-size: 15px; font-weight: 500; color: var(--text); }
     .cs-nav-right { text-align: right; }
+
+    .cs-hero-text {
+      max-width:1280px; 
+      margin:0 auto; 
+      padding: 0 2rem; 
+      width:100%; 
+      box-sizing:border-box; 
+      text-align:left; 
+      font-size: 48px; 
+      font-weight: 600;
+    }
 
     /* ── ABOUT PAGE ── */
     .about-header {
-      padding: 5rem 0 3.5rem;
+      padding: 4.5rem 0 4.5rem;
       border-bottom: 1px solid var(--border);
       margin-bottom: 3.5rem;
     }
     .about-header h1 {
       font-family: 'Figtree', serif;
-      font-size: clamp(2rem, 4vw, 1.8rem);
+      font-size: 2.5rem;
       font-weight: 400;
       line-height: 1.2;
       max-width: 1280px;
@@ -347,10 +370,10 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 450px 1fr;
-      gap: 4rem;
-      align-items: start;
-      margin-bottom: 6rem;
+      grid-template-columns: 500px 1fr;
+      gap: 3.5rem;
+      align-items: flex-start;
+      margin-bottom: 3.5rem;
     }
     .about-photo-wrap {
       position: sticky;
@@ -361,7 +384,6 @@
       aspect-ratio: 3/4;
       background: #D8D4CC;
       border-radius: 16px;
-      /* border: 1px solid var(--border); */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -369,7 +391,7 @@
       color: var(--muted);
       overflow: hidden;
     }
-    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-photo img { width: 100%; height: 150%; object-fit: cover; }
     .social-links {
       margin-top: 1.25rem;
       display: flex;
@@ -396,10 +418,10 @@
     .about-content { padding-top: 0.5rem; }
     .about-intro {
       font-family: 'Montserrat', serif;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       line-height: 1.55;
       font-weight: 400;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.2rem;
     }
     .about-body {
       font-size: 15px;
@@ -511,14 +533,53 @@
     @media (max-width: 720px) {
       body { font-size: 14px; }
       .nav-links a { font-size: 14px; }
+      .project-grid { margin-bottom: 3rem;}
+      .about-grid { margin-bottom: 3rem; }
+      .work-header h1 { font-size: 1.2rem; }
+      .work-header {
+          padding: 3rem 0 3rem;
+      }
+      .cs-header {
+        padding: 2.5rem 0 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .cs-header h1 { font-size: 1.4rem }
+      .cs-header .subtitle { font-size: 12px; line-height: 1.6; }
+      .cs-section h2 { font-size: 1rem; }
+      .cs-section p { font-size: 12px; line-height: 1.7; }
+      .cs-hero {
+        margin: 0 auto;
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .cs-hero-text {
+      max-width:800px; 
+      margin:0 auto; 
+      padding: 0 2rem; 
+      width:100%; 
+      box-sizing:border-box; 
+      text-align:left; 
+      font-size: 0.8rem; 
+      font-weight: 600;
+      }
+      .nav-inner {
+        margin: 0 auto;
+        padding: 0 2rem;
 
-      .work-header h1 { font-size: clamp(1.35rem, 6vw, 1.6rem); }
-      .cs-header h1 { font-size: clamp(1.5rem, 7vw, 1.9rem); }
-      .cs-header .subtitle { font-size: 14px; line-height: 1.6; }
-      .cs-section h2 { font-size: 1.25rem; }
-      .cs-section p { font-size: 14px; line-height: 1.7; }
-
-      .about-header h1 { font-size: clamp(1.35rem, 6vw, 1.6rem); }
+      }
+      .nav-logo {
+      width: 15%;
+      object-fit: contain;
+      display: block;
+    }
+      .about-header h1 { font-size: 1.35rem; }
+      .about-header {
+      padding: 3rem 0 3rem;
+      margin-bottom: 2.5rem;
+    }
       .about-intro { font-size: 1.35rem; }
       .about-body { font-size: 14px; line-height: 1.7; }
       .section-label { font-size: 10px; }
@@ -528,6 +589,10 @@
       .about-grid { grid-template-columns: 1fr; }
       .about-photo-wrap { position: static; }
       .about-photo { aspect-ratio: 4/3; }
+      .about-photo img {
+      width: 100%;
+      height: 100%;
+      }
       .work-header { flex-direction: column; align-items: flex-start; }
       .work-header p { text-align: left; max-width: 100%; }
       .footer-inner {
