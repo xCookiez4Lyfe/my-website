@@ -91,9 +91,8 @@
     .nav-back.visible { display: flex; }
     .nav-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
 
-    /* PAGES */
-    .page { display: none; padding-top: 60px; }
-    .page.active { display: block; }
+    /* PAGES - now single scroll, sections always visible */
+    section { padding-top: 90px; }
 
     /* WRAPPER */
     .wrap {
@@ -105,7 +104,7 @@
     /* ── WORK PAGE ── */
     .work-header {
       padding: 4.5rem 0 4.5rem;
-      border-bottom: 1px solid var(--border);
+      /* border-bottom: 1px solid var(--border); */
       margin-bottom: 3.5rem;
       display: flex;
       align-items: center;
@@ -114,7 +113,7 @@
     }
     .work-header h1 {
       font-family: 'Figtree', serif;
-      font-size: 2rem;
+      font-size: 4rem;
       /* font-size: 2rem; */
       font-weight: 400;
       line-height: 1.2;
@@ -356,7 +355,7 @@
     /* ── ABOUT PAGE ── */
     .about-header {
       padding: 4.5rem 0 4.5rem;
-      border-bottom: 1px solid var(--border);
+      /* border-bottom: 1px solid var(--border); */
       margin-bottom: 3.5rem;
     }
     .about-header h1 {
@@ -440,7 +439,7 @@
       color: var(--muted);
       margin-bottom: 1.25rem;
       padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--border);
+      /* border-bottom: 1px solid var(--border); */
     }
     .skill-grid {
       display: flex;
@@ -463,6 +462,69 @@
     .edu-item { margin-bottom: 1.25rem; }
     .edu-item h5 { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
     .edu-item p { font-size: 13px; color: var(--muted); }
+
+
+    /* ── CASE STUDY OVERLAY ── */
+    .case-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: var(--bg);
+      overflow-y: auto;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .case-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+
+    /* ── CONNECT SECTION ── */
+    #connect {
+      /* border-top: 1px solid var(--border); */
+    }
+    .connect-inner {
+      padding: 5rem 0 6rem;
+      max-width: 640px;
+    }
+    .connect-heading {
+      font-family: 'Figtree', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .connect-sub {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .connect-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .connect-btn {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 0.65rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      background: var(--text);
+      color: var(--bg);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .connect-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+    .connect-btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .connect-btn-ghost:hover { border-color: var(--text); opacity: 1; }
 
     /* FOOTER */
     footer {
@@ -565,16 +627,9 @@
       font-size: 0.8rem; 
       font-weight: 600;
       }
-      .nav-inner {
-        margin: 0 auto;
-        padding: 0 2rem;
-
-      }
-      .nav-logo {
-      width: 15%;
-      object-fit: contain;
-      display: block;
-    }
+      nav { top: 0.75rem; }
+      .nav-logo img { height: 28px; }
+      .nav-links a { font-size: 12px; padding: 0.4rem 0.65rem; }
       .about-header h1 { font-size: 1.35rem; }
       .about-header {
       padding: 3rem 0 3rem;

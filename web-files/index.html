@@ -9,93 +9,83 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet" />
-  <style>
-    a {
-      color: var(--accent);
-    }
-  </style>
+  <style>a { color: var(--accent); }</style>
 </head>
 <body>
-  <nav id="main-nav" style="display:fixed;">
+
+  <!-- ═══ NAV ═══ -->
+  <nav id="main-nav">
     <div class="nav-inner">
-      <a class="nav-logo" onclick="showPage('work')"><img src="images/portfolio-logo-new.png" alt="TJ Logo" /></a>
-      <div class="nav-right">
-        <button class="nav-back" id="nav-back" onclick="showPage('work')">
-          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-          Back to work
-        </button>
-        <div class="nav-links">
-          <a id="nav-work" class="active" onclick="showPage('work')">Projects</a>
-          <a id="nav-about" onclick="showPage('about')">Info</a>
-        </div>
+      <a class="nav-logo" href="#home"><img src="images/portfolio-logo-new.png" alt="TJ Logo" /></a>
+      <div class="nav-links">
+        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        <a href="#story"    class="nav-link" data-section="story">My story</a>
+        <a href="#connect"  class="nav-link" data-section="connect">Connect</a>
       </div>
     </div>
   </nav>
- 
-  <!-- ═══ WORK PAGE ═══ -->
-  <div class="page active" id="page-work">
-    <div class="wrap">
-      <div class="work-header fade-in">
-        <h1>Aspiring UI/UX designer and avid learner. I create digital art, games, websites and anything in between!</h1>
+
+  <!-- ═══ MAIN SINGLE-PAGE CONTENT ═══ -->
+  <div id="main-content">
+
+    <!-- HOME -->
+    <section id="home" style="min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem;">
+      <h1 style="font-size:clamp(3rem, 10vw, 8rem); margin:0; line-height:0.9;">thanish. j</h1>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="work-header fade-in">
+          <h1>My Projects</h1>
+        </div>
+        <div class="project-grid">
+
+          <div class="project-card fade-in fade-in-1" onclick="openCase('mattwebsite')">
+            <div class="project-thumb" style="background:#D8E8E1;">
+              <img src="images/matt-website.png" alt="MATT website thumbnail" />
+            </div>
+            <div class="project-overlay"><h3>MATT website</h3></div>
+          </div>
+
+          <div class="project-card fade-in fade-in-1" onclick="openCase('assistivefutures')">
+            <div class="project-thumb" style="background:#D8E8E1;">
+              <img src="images/digital-futures.png" alt="Assistive futures card game" />
+            </div>
+            <div class="project-overlay"><h3>Interactive card game</h3></div>
+          </div>
+
+          <div class="project-card fade-in fade-in-1" onclick="openCase('capstoneproject')">
+            <div class="project-thumb" style="background:#D8E8E1;">
+              <img src="images/capstone- project.png" alt="Capstone project" />
+            </div>
+            <div class="project-overlay"><h3>University capstone project</h3></div>
+          </div>
+
+        </div>
       </div>
-      <div class="project-grid">
+    </section>
 
-        <div class="project-card fade-in fade-in-1" onclick="showCase('mattwebsite')">
-          <div class="project-thumb" style="background:#D8E8E1;">
-            <img src="images/matt-website.png" alt="MATT website thumbnail" />
-          </div>
-          <div class="project-overlay">
-            <h3>MATT website</h3>
-          </div>
-        </div>
- 
-        <div class="project-card fade-in fade-in-1" onclick="showCase('assistivefutures')">
-          <div class="project-thumb" style="background:#D8E8E1;">
-            <img src="images/digital-futures.png" alt="Assistive futures card game" />
-          </div>
-          <div class="project-overlay">
-            <h3>Interactive card game</h3>
-          </div>
-        </div>
-
-        <div class="project-card fade-in fade-in-1" onclick="showCase('capstoneproject')">
-          <div class="project-thumb" style="background:#D8E8E1;">
-            <img src="images/capstone- project.png" alt="Capstone project" />
-          </div>
-          <div class="project-overlay">
-            <h3>University capstone project</h3>
-          </div>
-        </div>
-
-        <!-- <div class="project-card fade-in fade-in-1" onclick="showCase('webflowsite')">
-          <div class="project-thumb" style="background:#D8E8E1;">
-            <img src="images/cancer-council.png" alt="Slip, slop, slap campaign" />
-          </div>
-          <div class="project-overlay">
-            <h3>Cancer Council campaign concept</h3>
-          </div>
-        </div>
- 
-        <div class="project-card fade-in fade-in-1" onclick="showCase('wixsite')">
-          <div class="project-thumb" style="background:#D8E8E1;">
-            <img src="images/acrolex.png" alt="Acrolex law firm website" />
-          </div>
-          <div class="project-overlay">
-            <h3>Law firm website concept</h3>
-          </div>
-        </div>
-
-        <div class="project-card fade-in fade-in-1" onclick="showCase('smarthomeapp')">
-          <div class="project-thumb" style="background:#D8E8E1;">
-            <img src="images/smart-home.png" alt="Smart home app" />
-          </div>
-          <div class="project-overlay">
-            <h3>Smart home app concept</h3>
-          </div>
-        </div> -->
-
+    <!-- MY STORY -->
+    <section id="story">
+      <div class="wrap">
+      
       </div>
-    </div>
+    </section>
+
+    <!-- CONNECT -->
+    <section id="connect">
+      <div class="wrap">
+        <div class="connect-inner fade-in">
+          <h2 class="connect-heading">Let's work together</h2>
+          <p class="connect-sub">Open to new projects, collaborations, and opportunities. Feel free to reach out!</p>
+          <div class="connect-links">
+            <a href="mailto:thanishwarj@gmail.com" class="connect-btn">Email me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
       <div class="footer-inner">
         <span class="footer-contact">© 2026 Thanishwar J.</span>
@@ -114,20 +104,23 @@
         </div>
       </div>
     </footer>
+
+  </div><!-- /main-content -->
+
+  <!-- ═══ CASE STUDY OVERLAY ═══ -->
+  <div id="case-overlay" class="case-overlay">
+    <div id="case-content"></div>
   </div>
- 
-  <!-- ═══ CASE STUDY: MATT WEBSITE ═══ -->
-  <div class="page" id="page-case-mattwebsite">
-    <div class="cs-hero" style="background-image:url('images/matt-website-thumbnail.png'); background-color: #897cce;">
-      <div class="cs-hero-text"> 
-        <span>MATT Official <br> Website Redesign</span>
-      </div>
+
+  <!-- ═══ CASE STUDY TEMPLATES ═══ -->
+
+  <template id="tpl-mattwebsite">
+    <div class="cs-hero" style="background-image:url('images/matt-website-thumbnail.png'); background-color:#897cce;">
+      <div class="cs-hero-text"><span>MATT Official <br> Website Redesign</span></div>
     </div>
     <div class="wrap">
       <div class="cs-header fade-in">
-        <div class="cs-meta">
-          <div class="cs-meta-item"><span class="cs-meta-label">STUDENT PROJECT</span></div>
-        </div>
+        <div class="cs-meta"><div class="cs-meta-item"><span class="cs-meta-label">STUDENT PROJECT</span></div></div>
         <h1>MATT Official Website Redesign</h1>
         <p class="subtitle">Coming into the new academic year, our goal was to redesign the team's official website to reflect MATT's updated brand identity and improve user experience. The project team consisted of 3 members from the Branding and Design sub-team.</p>
       </div>
@@ -136,79 +129,45 @@
           <p class="cs-section-label">01: Overview</p>
           <h2>The Problem</h2>
           <p>The legacy website was functional, but it did not reflect the team's new brand identity - which was more playful and creative. It looked a bit generic, leaned on stock-style graphics, and had clunky, text-heavy menus and odd colour combinations that sometimes hindered readability. Our redesign project was all about giving the website a fresh look, bringing in hand‑drawn assets, improving website navigation, fixing contrast issues, and making our projects and recruitment info feel more engaging in order to boost outreach and user engagement on the team's website.</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add a screenshot or diagram here — e.g. before/after, user flow, or problem framing</span>
-          </div>
+          <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add a screenshot or diagram here — e.g. before/after, user flow, or problem framing</span></div>
         </div>
         <div class="cs-section fade-in">
           <p class="cs-section-label">02: Research & Process</p>
           <h2>The Approach</h2>
           <p>To guide the direction of our redesign project, we conducted a competitive analysis of other student team websites to understand what made them feel engaging, and professional at the same time. Additionally, we conducted an accessibility audit on the legacy site to identify issues such as dense dropdown menus, weak colour contrast, and a static projects section that did not invite exploration. We also gathered input from internal stakeholders by asking team members what they wanted to see on the site, with common requests including more interactivity and animated elements on the website.</p>
           <p>These findings were translated into low‑fidelity wireframes and prototypes in Figma, exploring alternative layouts, navigation patterns, and a refined colour palette. After 2–3 rounds of iteration and feedback from the team lead, the selected design direction was approved and then implemented on Squarespace by progressively replacing the legacy pages with the new components and visuals.</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add wireframes, affinity maps, journey maps, or research notes here</span>
-          </div>
+          <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add wireframes, affinity maps, journey maps, or research notes here</span></div>
         </div>
         <div class="cs-section fade-in">
           <p class="cs-section-label">03: Final Design</p>
           <h2>The Outcome</h2>
-          <p>The final website introduces a refreshed homepage, a more interactive projects experience, and clearer recruitment flows, all wrapped in a new visual style built around hand-drawn illustrations and an accessible colour palette. Website navigation is simpler, the projects page now uses a carousel to encourage exploration, and a dedicated Recruitment page guides prospective members through the application process with clear calls to action and expectations. Together, these changes align the site with the team’s new brand identity and provide better support for recruitment and outreach goals.</p>
+          <p>The final website introduces a refreshed homepage, a more interactive projects experience, and clearer recruitment flows, all wrapped in a new visual style built around hand-drawn illustrations and an accessible colour palette. Website navigation is simpler, the projects page now uses a carousel to encourage exploration, and a dedicated Recruitment page guides prospective members through the application process with clear calls to action and expectations. Together, these changes align the site with the team's new brand identity and provide better support for recruitment and outreach goals.</p>
           <p>Visit the website <a href="http://www.monatt.org">here</a></p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add your final high-fidelity screens or prototype here</span>
-          </div>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add a second screen or interaction detail here</span>
-          </div>
+          <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add your final high-fidelity screens or prototype here</span></div>
+          <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add a second screen or interaction detail here</span></div>
         </div>
         <div class="cs-nav">
-          <button class="cs-nav-btn cs-nav-left" onclick="showPage('work')">
+          <button class="cs-nav-btn cs-nav-left" onclick="closeCase()">
             <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
             <div><div class="cs-nav-label">All projects</div></div>
           </button>
-          <button class="cs-nav-btn cs-nav-right" onclick="showCase('assistivefutures')">
+          <button class="cs-nav-btn cs-nav-right" onclick="openCase('assistivefutures')">
             <div><div class="cs-nav-label">Next project</div></div>
             <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
       </div>
     </div>
-    <footer>
-      <div class="footer-inner">
-        <span class="footer-contact">© 2026 Thanishwar J.</span>
-        <div class="footer-right">
-          <div class="footer-social" aria-label="Social links">
-            <a href="https://www.linkedin.com/in/thanish-j" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <img src="images/linkedin.png" alt="LinkedIn" />
-            </a>
-            <a href="https://www.instagram.com/thanishrawrrr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <img src="images/instagram.png" alt="Instagram" />
-            </a>
-            <a href="mailto:thanishwarj@gmail.com" aria-label="Email">
-              <img src="images/mail.png" alt="Email" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
- 
-  <!-- ═══ CASE STUDY: ASSISTIVE FUTURES ═══ -->
-  <div class="page" id="page-case-assistivefutures">
-    <div class="cs-hero" style="background-image:url('images/interactive-card-thumbnail.png'); background-color: #487dc2;">
-      <div class="cs-hero-text"> 
-        <span>Assistive Futures<br>Workshop (Card Game)</span>
-      </div>
+    <footer><div class="footer-inner"><span class="footer-contact">© 2026 Thanishwar J.</span><div class="footer-right"><div class="footer-social"><a href="https://www.linkedin.com/in/thanish-j" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"/></a><a href="https://www.instagram.com/thanishrawrrr/" target="_blank"><img src="images/instagram.png" alt="Instagram"/></a><a href="mailto:thanishwarj@gmail.com"><img src="images/mail.png" alt="Email"/></a></div></div></div></footer>
+  </template>
+
+  <template id="tpl-assistivefutures">
+    <div class="cs-hero" style="background-image:url('images/interactive-card-thumbnail.png'); background-color:#487dc2;">
+      <div class="cs-hero-text"><span>Assistive Futures<br>Workshop (Card Game)</span></div>
     </div>
     <div class="wrap">
       <div class="cs-header fade-in">
-        <div class="cs-meta">
-          <div class="cs-meta-item"><span class="cs-meta-label">Student project</span></div>
-        </div>
+        <div class="cs-meta"><div class="cs-meta-item"><span class="cs-meta-label">Student project</span></div></div>
         <h1>Designing an Interactive Card Game</h1>
         <p class="subtitle">A collaboration between Monash Assistive Tech Team (MATT) and the Monash Faculty of IT. The Assistive Futures Workshop centres on an interactive card game that helps participants imagine and design future assistive technologies through playful, guided prompts. Designed for Year 10-12 students and above, it uses a flexible format that can easily adapt to older audiences as well.</p>
       </div>
@@ -216,76 +175,45 @@
         <div class="cs-section fade-in">
           <p class="cs-section-label">01: Overview</p>
           <h2>The Goal</h2>
-          <p>The card game was designed to provide facilitators witheverything they need to run a smooth, engaging workshop where participants work in teams to tackle real-world accessibility challenges and design imaginative future technologies. With playful visuals and collaborative team play, it aims to inspire creativity and design thinking, helping participants learn, experiment, and pitch ideas without feeling like they are being tested.</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add a screenshot of the original interface or a problem framing diagram</span>
-          </div>
+          <p>The card game was designed to provide facilitators with everything they need to run a smooth, engaging workshop where participants work in teams to tackle real-world accessibility challenges and design imaginative future technologies. With playful visuals and collaborative team play, it aims to inspire creativity and design thinking, helping participants learn, experiment, and pitch ideas without feeling like they are being tested.</p>
+          <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add a screenshot of the original interface or a problem framing diagram</span></div>
         </div>
         <div class="cs-section fade-in">
           <p class="cs-section-label">02: Research & Process</p>
           <h2>The Approach</h2>
           <p>As the Lead Artist on this project, my role focused on creating a consistent visual identity for the card game, ensuring that all elements aligned with the workshop's accessible and inclusive theme. I worked on the individual card designs which included a diverse range of characters, and approached the overall art direction with a cartoon style because I wanted it to be approachable for younger audiences.</p>
           <p>The final deck consisting of 17 game cards (7 Scenario Cards and 10 Future Tech Cards) took about 2-3 weeks to be completed and printed out. Before the final implementation, we conducted a playtest session to ensure the designs were ready for the Assistive Futures Workshop on the 21st of September 2025.</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add your heuristic analysis findings, user journey map, or test notes</span>
-          </div>
+          <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add your heuristic analysis findings, user journey map, or test notes</span></div>
         </div>
         <div class="cs-section fade-in">
           <p class="cs-section-label">03: Final Design</p>
           <h2>The Outcome</h2>
-          <p>Overall, majority of students rated the workshop highly, with an average engagement score of 4/5. Based on their feedback, it helped them think deeply about accessibility and the kinds of assistive technologies people might need in real life. </p>
-          <p>From a personal perspective, the most satisfying moment being the Lead Artist was seeing the visual style of the game appeal to the target audience. The positive engagement scores and “fun and engaging” feedback suggests that the card designs and overall visual tone supported the inclusive, low-pressure experience the we were aiming for.</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add before/after screens or your redesigned checkout flow here</span>
-          </div>
+          <p>Overall, majority of students rated the workshop highly, with an average engagement score of 4/5. Based on their feedback, it helped them think deeply about accessibility and the kinds of assistive technologies people might need in real life.</p>
+          <p>From a personal perspective, the most satisfying moment being the Lead Artist was seeing the visual style of the game appeal to the target audience. The positive engagement scores and "fun and engaging" feedback suggests that the card designs and overall visual tone supported the inclusive, low-pressure experience we were aiming for.</p>
+          <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add before/after screens or your redesigned checkout flow here</span></div>
         </div>
         <div class="cs-nav">
-          <button class="cs-nav-btn cs-nav-left" onclick="showCase('mattwebsite')">
+          <button class="cs-nav-btn cs-nav-left" onclick="openCase('mattwebsite')">
             <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
             <div><div class="cs-nav-label">Previous project</div></div>
           </button>
-          <button class="cs-nav-btn cs-nav-right" onclick="showCase('capstoneproject')">
+          <button class="cs-nav-btn cs-nav-right" onclick="openCase('capstoneproject')">
             <div><div class="cs-nav-label">Next project</div></div>
             <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
       </div>
     </div>
-    <footer>
-      <div class="footer-inner">
-        <span class="footer-contact">© 2026 Thanishwar J.</span>
-        <div class="footer-right">
-          <div class="footer-social" aria-label="Social links">
-            <a href="https://www.linkedin.com/in/thanish-j" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <img src="images/linkedin.png" alt="LinkedIn" />
-            </a>
-            <a href="https://www.instagram.com/thanishrawrrr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <img src="images/instagram.png" alt="Instagram" />
-            </a>
-            <a href="mailto:thanishwarj@gmail.com" aria-label="Email">
-              <img src="images/mail.png" alt="Email" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
- 
-  <!-- ═══ CASE STUDY: CAPSTONE PROJECT ═══ -->
-  <div class="page" id="page-case-capstoneproject">
-    <div class="cs-hero" style="background-image:url('images/interactive-card-thumbnail.png'); background-color: #487dc2;">
-      <div class="cs-hero-text"> 
-        <span>Monash University<br>Capstone Project</span>
-      </div>
+    <footer><div class="footer-inner"><span class="footer-contact">© 2026 Thanishwar J.</span><div class="footer-right"><div class="footer-social"><a href="https://www.linkedin.com/in/thanish-j" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"/></a><a href="https://www.instagram.com/thanishrawrrr/" target="_blank"><img src="images/instagram.png" alt="Instagram"/></a><a href="mailto:thanishwarj@gmail.com"><img src="images/mail.png" alt="Email"/></a></div></div></div></footer>
+  </template>
+
+  <template id="tpl-capstoneproject">
+    <div class="cs-hero" style="background-image:url('images/interactive-card-thumbnail.png'); background-color:#487dc2;">
+      <div class="cs-hero-text"><span>Monash University<br>Capstone Project</span></div>
     </div>
     <div class="wrap">
       <div class="cs-header fade-in">
-        <div class="cs-meta">
-          <div class="cs-meta-item"><span class="cs-meta-label">Capstone Project</span></div>
-        </div>
+        <div class="cs-meta"><div class="cs-meta-item"><span class="cs-meta-label">Capstone Project</span></div></div>
         <h1>Lord Quacksalot and the Soup of Doom</h1>
         <p class="subtitle">A genre-bending, hybrid 2D/3D adventure game that blends exploration, puzzles, and chaos. Aimed at midcore players who love stylized visuals and humor, the game hops between levels styled after popular Hollywood movie tropes ranging from a gritty Spaghetti Western to a ghostly Broadway theater.</p>
       </div>
@@ -294,394 +222,104 @@
           <p class="cs-section-label">01: Overview</p>
           <h2>The Challenge</h2>
           <p>Working together in a team of 5 students of various IT backgrounds, we needed to create a cohesive narrative and gameplay experience for a world-hopping game that consisted of different genres and mechanics without feeling disjointed. Additionally, the game required a structured way to teach players unique mechanics in each level while preparing them for a spike in difficulty later on. To achieve this, we had to ensure that the different themes felt connected and that the learning curve naturally built towards an end goal.</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add a brief or problem framing visual here</span>
-          </div>
+          <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add a brief or problem framing visual here</span></div>
         </div>
         <div class="cs-section fade-in">
           <p class="cs-section-label">02: Research & Process</p>
           <h2>The Approach</h2>
-          <p>As the Lead Character Designer and Assistant Environmental Designer, I used Aseprite as my primary tool for creating character sprites and Adobe Substance Painter for texturing environments. A lot of self learning was involved from my end especially in understanding the Aseprite software and character design workflow since it was my first time working with pixel art.</p> 
+          <p>As the Lead Character Designer and Assistant Environmental Designer, I used Aseprite as my primary tool for creating character sprites and Adobe Substance Painter for texturing environments. A lot of self learning was involved from my end especially in understanding the Aseprite software and character design workflow since it was my first time working with pixel art.</p>
           <p>We tied together the game's narrative by anchoring it to a core theme of Hollywood genres and show business, using targeted competitor analysis and user personas to refine our direction. Furthermore, regular in-class playtesting sessions provided critical feedback, allowing us to iteratively polish the character art, environment textures, audio, and gameplay mechanics.</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add early sketches, wireframes, or information architecture here</span>
-          </div>
+          <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add early sketches, wireframes, or information architecture here</span></div>
         </div>
         <div class="cs-section fade-in">
           <p class="cs-section-label">03: Final Designs</p>
           <h2>The Outcome</h2>
           <p>By the end of the year, we launched our game on Itch.io, delivering the most polished and stable build possible within our timeframe. The final product successfully achieves a playful, humorous tone with distinct visual styles that offer a uniquely engaging indie experience.</p>
           <p>On a personal note, working on the game art was such a rewarding experience because it was one of the highlights of the game based on feedback from players during the final playtest session. This project definitely pushed me out of my comfort zone to take on a new role and helped me to grow as a designer, and I'm really proud of the entire team for the work that they put into this project.</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add your final dashboard UI screens here</span>
-          </div>
+          <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add your final dashboard UI screens here</span></div>
         </div>
         <div class="cs-nav">
-          <button class="cs-nav-btn" onclick="showCase('assistivefutures')">
+          <button class="cs-nav-btn cs-nav-left" onclick="openCase('assistivefutures')">
             <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
             <div><div class="cs-nav-label">Previous</div><div class="cs-nav-title">Interactive card game</div></div>
           </button>
-          <button class="cs-nav-btn cs-nav-right" onclick="showCase('webflowsite')">
-            <div><div class="cs-nav-label">Next project</div><div class="cs-nav-title">Cancer Council campaign concept</div></div>
-            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <footer>
-      <div class="footer-inner">
-        <span class="footer-contact">© 2026 Thanishwar J.</span>
-        <div class="footer-right">
-          <div class="footer-social" aria-label="Social links">
-            <a href="https://www.linkedin.com/in/thanish-j" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <img src="images/linkedin.png" alt="LinkedIn" />
-            </a>
-            <a href="https://www.instagram.com/thanishrawrrr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <img src="images/instagram.png" alt="Instagram" />
-            </a>
-            <a href="mailto:thanishwarj@gmail.com" aria-label="Email">
-              <img src="images/mail.png" alt="Email" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
- 
-  <!-- ═══ CASE STUDY: CANCER COUNCIL CONCEPT ═══ -->
-  <div class="page" id="page-case-webflowsite">
-    <div class="cs-hero" style="background:#E8DDE8; color:#4A2D4A;"><span>Brand + Interface</span></div>
-    <div class="wrap">
-      <div class="cs-header fade-in">
-        <div class="cs-meta">
-          <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span class="cs-meta-value">Student project</span></div>
-        </div>
-        <h1>A brand identity system and app interface concept</h1>
-        <p class="subtitle">Designing the visual language for a student project from scratch — logo, type system, colour palette, and key app screens.</p>
-      </div>
-      <div class="cs-body">
-        <div class="cs-section fade-in">
-          <p class="cs-section-label">01 — Overview / Problem statement</p>
-          <h2>What was the problem?</h2>
-          <p>What brand were you designing for? What values did it need to communicate? Who is the target audience and what were their expectations?</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add a mood board, brief summary, or initial direction here</span>
-          </div>
-        </div>
-        <div class="cs-section fade-in">
-          <p class="cs-section-label">02 — Research & Process</p>
-          <h2>How did you approach it?</h2>
-          <p>Walk through your brand exploration — mood boards, logo iterations, type pairing decisions. How did you arrive at your final visual direction?</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add logo explorations, type studies, or colour palette iterations here</span>
-          </div>
-        </div>
-        <div class="cs-section fade-in">
-          <p class="cs-section-label">03 — Final Designs</p>
-          <h2>What did you design?</h2>
-          <p>Show the final brand system and app screens. How does the brand identity translate into the digital interface? What components make up the design system?</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add your final brand assets and app screens here</span>
-          </div>
-        </div>  
-        <div class="cs-nav">
-          <button class="cs-nav-btn" onclick="showCase('capstoneproject')">
-            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-            <div><div class="cs-nav-label">Previous</div><div class="cs-nav-title">Capstone project</div></div>
-          </button>
-          <button class="cs-nav-btn cs-nav-right" onclick="showPage('wixsite')">
-            <div><div class="cs-nav-label">Back to</div><div class="cs-nav-title">Law firm website concept</div></div>
-            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <footer>
-      <div class="footer-inner">
-        <span class="footer-contact">© 2026 Thanishwar J.</span>
-        <div class="footer-right">
-          <div class="footer-social" aria-label="Social links">
-            <a href="https://www.linkedin.com/in/thanish-j" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <img src="images/linkedin.png" alt="LinkedIn" />
-            </a>
-            <a href="https://www.instagram.com/thanishrawrrr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <img src="images/instagram.png" alt="Instagram" />
-            </a>
-            <a href="mailto:thanishwarj@gmail.com" aria-label="Email">
-              <img src="images/mail.png" alt="Email" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
-
-  <!-- ═══ CASE STUDY: ACROLEX CONCEPT ═══ -->
-  <div class="page" id="page-case-wixsite">
-    <div class="cs-hero" style="background:#E8DDE8; color:#4A2D4A;"><span>Brand + Interface</span></div>
-    <div class="wrap">
-      <div class="cs-header fade-in">
-        <div class="cs-meta">
-          <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span class="cs-meta-value">Student project</span></div>
-        </div>
-        <h1>A brand identity system and app interface concept</h1>
-        <p class="subtitle">Designing the visual language for a student project from scratch — logo, type system, colour palette, and key app screens.</p>
-      </div>
-      <div class="cs-body">
-        <div class="cs-section fade-in">
-          <p class="cs-section-label">01 — Overview / Problem statement</p>
-          <h2>What was the problem?</h2>
-          <p>What brand were you designing for? What values did it need to communicate? Who is the target audience and what were their expectations?</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add a mood board, brief summary, or initial direction here</span>
-          </div>
-        </div>
-        <div class="cs-section fade-in">
-          <p class="cs-section-label">02 — Research & Process</p>
-          <h2>How did you approach it?</h2>
-          <p>Walk through your brand exploration — mood boards, logo iterations, type pairing decisions. How did you arrive at your final visual direction?</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add logo explorations, type studies, or colour palette iterations here</span>
-          </div>
-        </div>
-        <div class="cs-section fade-in">
-          <p class="cs-section-label">03 — Final Designs</p>
-          <h2>What did you design?</h2>
-          <p>Show the final brand system and app screens. How does the brand identity translate into the digital interface? What components make up the design system?</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add your final brand assets and app screens here</span>
-          </div>
-        </div>  
-        <div class="cs-nav">
-          <button class="cs-nav-btn" onclick="showCase('webflowsite')">
-            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-            <div><div class="cs-nav-label">Previous</div><div class="cs-nav-title">Cancer council campaign concept</div></div>
-          </button>
-          <button class="cs-nav-btn cs-nav-right" onclick="showPage('smarthomeapp')">
-            <div><div class="cs-nav-label">Back to</div><div class="cs-nav-title">Smart home app concept</div></div>
-            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <footer>
-      <div class="footer-inner">
-        <span class="footer-contact">© 2026 Thanishwar J.</span>
-        <div class="footer-right">
-          <div class="footer-social" aria-label="Social links">
-            <a href="https://www.linkedin.com/in/thanish-j" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <img src="images/linkedin.png" alt="LinkedIn" />
-            </a>
-            <a href="https://www.instagram.com/thanishrawrrr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <img src="images/instagram.png" alt="Instagram" />
-            </a>
-            <a href="mailto:thanishwarj@gmail.com" aria-label="Email">
-              <img src="images/mail.png" alt="Email" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
-
-  <!-- ═══ CASE STUDY: SMART HOME APP ═══ -->
-  <div class="page" id="page-case-smarthomeapp">
-    <div class="cs-hero" style="background:#E8DDE8; color:#4A2D4A;"><span>Brand + Interface</span></div>
-    <div class="wrap">
-      <div class="cs-header fade-in">
-        <div class="cs-meta">
-          <div class="cs-meta-item"><span class="cs-meta-label">Type</span><span class="cs-meta-value">Student project</span></div>
-        </div>
-        <h1>A brand identity system and app interface concept</h1>
-        <p class="subtitle">Designing the visual language for a student project from scratch — logo, type system, colour palette, and key app screens.</p>
-      </div>
-      <div class="cs-body">
-        <div class="cs-section fade-in">
-          <p class="cs-section-label">01 — Overview / Problem statement</p>
-          <h2>What was the problem?</h2>
-          <p>What brand were you designing for? What values did it need to communicate? Who is the target audience and what were their expectations?</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add a mood board, brief summary, or initial direction here</span>
-          </div>
-        </div>
-        <div class="cs-section fade-in">
-          <p class="cs-section-label">02 — Research & Process</p>
-          <h2>How did you approach it?</h2>
-          <p>Walk through your brand exploration — mood boards, logo iterations, type pairing decisions. How did you arrive at your final visual direction?</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add logo explorations, type studies, or colour palette iterations here</span>
-          </div>
-        </div>
-        <div class="cs-section fade-in">
-          <p class="cs-section-label">03 — Final Designs</p>
-          <h2>What did you design?</h2>
-          <p>Show the final brand system and app screens. How does the brand identity translate into the digital interface? What components make up the design system?</p>
-          <div class="cs-image-placeholder">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Add your final brand assets and app screens here</span>
-          </div>
-        </div>  
-        <div class="cs-nav">
-          <button class="cs-nav-btn" onclick="showCase('wixsite')">
-            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-            <div><div class="cs-nav-label">Previous</div><div class="cs-nav-title">Law firm website concept</div></div>
-          </button>
-          <button class="cs-nav-btn cs-nav-right" onclick="showPage('work')">
+          <button class="cs-nav-btn cs-nav-right" onclick="closeCase()">
             <div><div class="cs-nav-label">Back to</div><div class="cs-nav-title">All projects</div></div>
             <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
       </div>
     </div>
-    <footer>
-      <div class="footer-inner">
-        <span class="footer-contact">© 2026 Thanishwar J.</span>
-        <div class="footer-right">
-          <div class="footer-social" aria-label="Social links">
-            <a href="https://www.linkedin.com/in/thanish-j" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <img src="images/linkedin.png" alt="LinkedIn" />
-            </a>
-            <a href="https://www.instagram.com/thanishrawrrr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <img src="images/instagram.png" alt="Instagram" />
-            </a>
-            <a href="mailto:thanishwarj@gmail.com" aria-label="Email">
-              <img src="images/mail.png" alt="Email" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
- 
-  <!-- ═══ ABOUT PAGE ═══ -->
-  <div class="page" id="page-about">
-    <div class="wrap">
-      <div class="about-header fade-in">
-        <h1 id="typewriter-heading" aria-label="Currently learning: Advanced Figma prototyping"></h1>
-      </div>
-      <div class="about-grid">
-        <div class="about-photo-wrap fade-in fade-in-1">
-          <div class="about-photo">
-            <img src="images/portrait.jpg" alt="Thanish portrait" />
-          </div>
-          <!-- <div class="social-links">
-            <a href="https://linkedin.com" target="_blank"><span class="social-dot"></span>LinkedIn</a>
-            <a href="https://behance.net" target="_blank"><span class="social-dot"></span>Behance</a>
-            <a href="mailto:youremail@email.com"><span class="social-dot"></span>youremail@email.com</a>
-          </div> -->
-        </div>
-        <div class="about-content fade-in fade-in-2">
-          <p class="about-intro">Hey, I'm Thanish!</p>
-          <p class="about-body">I recently graduated from Monash University with a Bachelor of Information Technology, majoring in Immersive Media. I started my journey at the intersection of front-end development and game design. Over time, I’ve evolved from simply crafting digital experiences in the classroom to questioning who I’m building them for and why it matters!</p>
-          <div class="about-section">
-            <p class="section-label">Skills</p>
-            <div class="skill-grid">
-              <span class="skill-pill">Figma</span>
-              <span class="skill-pill">Prototyping</span>
-              <span class="skill-pill">Wireframing</span>
-              <span class="skill-pill">WCAG</span>
-              <span class="skill-pill">Systems Development</span>
-              <span class="skill-pill">HTML / CSS</span>
-              <span class="skill-pill">JavaScript</span>
-              <span class="skill-pill">Adobe Creative Suite</span>
-            </div>
-          </div>
-          <div class="about-section">
-            <p class="section-label">Education</p>
-            <div class="edu-item">
-              <h5>Monash University Australia</h5>
-              <p>Bachelor of Information Technology, graduated Dec 2025</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer>
-     <div class="footer-inner">
-        <span class="footer-contact">© 2026 Thanishwar J.</span>
-        <div class="footer-right">
-          <div class="footer-social" aria-label="Social links">
-            <a href="https://www.linkedin.com/in/thanish-j" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <img src="images/linkedin.png" alt="LinkedIn" />
-            </a>
-            <a href="https://www.instagram.com/thanishrawrrr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <img src="images/instagram.png" alt="Instagram" />
-            </a>
-            <a href="mailto:thanishwarj@gmail.com" aria-label="Email">
-              <img src="images/mail.png" alt="Email" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
- 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const caseIds = ['mattwebsite', 'assistivefutures', 'capstoneproject', 'webflowsite', 'wixsite', 'smarthomeapp'];
-  
-    const allPageIds = ['work', 'about', ...caseIds.map(c => 'case-' + c)];
- 
-    function showPage(page) {
-      allPageIds.forEach(p => {
-        const el = document.getElementById('page-' + p);
-        if (el) el.classList.remove('active');
-      });
-      ['work', 'about'].forEach(n => {
-        const el = document.getElementById('nav-' + n);
-        if (el) el.classList.remove('active');
-      });
- 
-      const target = document.getElementById('page-' + page);
-      if (target) target.classList.add('active');
- 
-      const isCase = caseIds.includes(page);
-      document.getElementById('nav-back').classList.toggle('visible', isCase);
- 
-      const nav = document.getElementById('main-nav');
-      nav.style.display = page === 'coming-soon' ? 'none' : 'block';
- 
-      if (page === 'work') document.getElementById('nav-work').classList.add('active');
-      if (page === 'about') {
-        document.getElementById('nav-about').classList.add('active');
-        runTypewriter();
-      }
- 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    <footer><div class="footer-inner"><span class="footer-contact">© 2026 Thanishwar J.</span><div class="footer-right"><div class="footer-social"><a href="https://www.linkedin.com/in/thanish-j" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"/></a><a href="https://www.instagram.com/thanishrawrrr/" target="_blank"><img src="images/instagram.png" alt="Instagram"/></a><a href="mailto:thanishwarj@gmail.com"><img src="images/mail.png" alt="Email"/></a></div></div></div></footer>
+  </template>
+
+  <script>
+    // ── CASE STUDY OVERLAY ──────────────────────────────────────
+    const overlay = document.getElementById('case-overlay');
+    const caseContent = document.getElementById('case-content');
+
+    function openCase(id) {
+      const tpl = document.getElementById('tpl-' + id);
+      if (!tpl) return;
+      caseContent.innerHTML = '';
+      caseContent.appendChild(tpl.content.cloneNode(true));
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      overlay.scrollTop = 0;
     }
- 
-    function showCase(id) {
-      showPage('case-' + id);
+
+    function closeCase() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
     }
- 
-    /* Typewriter for about heading */
+
+    // Close on Escape key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeCase();
+    });
+
+    // ── ACTIVE NAV LINK ON SCROLL ───────────────────────────────
+    const sections = ['home', 'projects', 'story', 'connect'];
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    // ── TYPEWRITER (fires when #story scrolls into view) ────────
     const twSegments = [
       { text: 'Currently learning: ', italic: false },
       { text: 'Advanced Figma Prototyping', italic: true }
     ];
- 
+    let twFired = false;
+
+    const storyObs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !twFired) {
+        twFired = true;
+        runTypewriter();
+      }
+    }, { threshold: 0.3 });
+    const storyEl = document.getElementById('story');
+    if (storyEl) storyObs.observe(storyEl);
+
     function runTypewriter() {
       const el = document.getElementById('typewriter-heading');
       if (!el) return;
       el.innerHTML = '';
-      let segIndex = 0, charIndex = 0;
-      let currentSpan = null;
- 
+      let segIndex = 0, charIndex = 0, currentSpan = null;
       function type() {
-        if (segIndex >= twSegments.length) {
-          el.classList.remove('typing');
-          return;
-        }
+        if (segIndex >= twSegments.length) { el.classList.remove('typing'); return; }
         const seg = twSegments[segIndex];
         if (charIndex === 0) {
           if (seg.text.startsWith('\n')) {
@@ -693,13 +331,9 @@
         }
         currentSpan.textContent += seg.text[charIndex];
         charIndex++;
-        if (charIndex >= seg.text.length) {
-          segIndex++;
-          charIndex = 0;
-        }
+        if (charIndex >= seg.text.length) { segIndex++; charIndex = 0; }
         setTimeout(type, segIndex === twSegments.length ? 60 : 45);
       }
- 
       el.classList.add('typing');
       setTimeout(type, 300);
     }
