@@ -14,7 +14,7 @@
 <body>
 
   <!-- ═══ NAV ═══ -->
-  <nav id="main-nav">
+   <nav id="main-nav">
     <div class="nav-inner">
       <a class="nav-logo" href="#home"><img src="images/portfolio-logo-new.png" alt="TJ Logo" /></a>
       <div class="nav-links">
@@ -22,8 +22,20 @@
         <a href="#story"    class="nav-link" data-section="story">My story</a>
         <a href="#connect"  class="nav-link" data-section="connect">Connect</a>
       </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+  <div class="top-blur" aria-hidden="true"></div>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <button class="nav-mobile-close" onclick="closeMenu()" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <a href="#projects" class="nav-link" data-section="projects" onclick="closeMenu()">Projects</a>
+    <a href="#story"    class="nav-link" data-section="story"    onclick="closeMenu()">My story</a>
+    <a href="#connect"  class="nav-link" data-section="connect"  onclick="closeMenu()">Connect</a>
+  </div>
 
   <!-- ═══ MAIN SINGLE-PAGE CONTENT ═══ -->
   <div id="main-content">
@@ -126,21 +138,15 @@
             <span class="cs-tag-pill">Student Project</span>
             <span class="cs-tag-pill">Accessibility</span>
           </div>
-          <div class="cs-hero-img" style="background:#897cce;">
-            <img src="images/matt-website-thumbnail.png" alt="MATT website" onerror="this.style.display='none'" />
-          </div>
-          <div class="cs-extra-imgs">
-            <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add a second screen or detail here</span></div>
-            <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add a third screen or detail here</span></div>
+          <div class="cs-imgs">
+            <img src="images/matt-website-thumbnail.png" alt="MATT Official Website Redesign" />
           </div>
       </div>
-      <div class="cs-section-2">
-        <div class="cs-bottom-bar">
-          <button class="cs-close-pill" onclick="closeCase()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            Close
-          </button>
-        </div>
+      <div class="cs-bottom-bar">
+        <button class="cs-close-pill" onclick="closeCase()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Close
+        </button>
       </div>
     </div>
   </template>
@@ -170,13 +176,11 @@
           <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add a second detail here</span></div>
         </div>
       </div>
-      <div class="cs-section-2">
-        <div class="cs-bottom-bar">
-          <button class="cs-close-pill" onclick="closeCase()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            Close
-          </button>
-        </div>
+      <div class="cs-bottom-bar">
+        <button class="cs-close-pill" onclick="closeCase()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Close
+        </button>
       </div>
     </div>
   </template>
@@ -206,13 +210,11 @@
             <div class="cs-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Add a second detail here</span></div>
           </div>
       </div>
-      <div class="cs-section-2">
-        <div class="cs-bottom-bar">
-          <button class="cs-close-pill" onclick="closeCase()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            Close
-          </button>
-        </div>
+      <div class="cs-bottom-bar">
+        <button class="cs-close-pill" onclick="closeCase()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Close
+        </button>
       </div>
     </div>
   </template>
@@ -254,39 +256,21 @@
       if (el) observer.observe(el);
     });
  
-    // typewriter
-    const twSegments = [
-      { text: 'Currently learning: ', italic: false },
-      { text: 'Advanced Figma Prototyping', italic: true }
-    ];
-    let twFired = false;
-    const storyObs = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting && !twFired) { twFired = true; runTypewriter(); }
-    }, { threshold: 0.3 });
-    const storyEl = document.getElementById('story');
-    if (storyEl) storyObs.observe(storyEl);
- 
-    function runTypewriter() {
-      const el = document.getElementById('typewriter-heading');
-      if (!el) return;
-      el.innerHTML = '';
-      let segIndex = 0, charIndex = 0, currentSpan = null;
-      function type() {
-        if (segIndex >= twSegments.length) { el.classList.remove('typing'); return; }
-        const seg = twSegments[segIndex];
-        if (charIndex === 0) {
-          if (seg.text.startsWith('\n')) { el.appendChild(document.createElement('br')); twSegments[segIndex] = { ...seg, text: seg.text.slice(1) }; }
-          currentSpan = document.createElement(seg.italic ? 'em' : 'span');
-          el.appendChild(currentSpan);
-        }
-        currentSpan.textContent += seg.text[charIndex];
-        charIndex++;
-        if (charIndex >= seg.text.length) { segIndex++; charIndex = 0; }
-        setTimeout(type, segIndex === twSegments.length ? 60 : 45);
-      }
-      el.classList.add('typing');
-      setTimeout(type, 300);
+    function toggleMenu() {
+      const menu = document.getElementById('nav-mobile-menu');
+      const btn  = document.getElementById('nav-hamburger');
+      const nav  = document.getElementById('main-nav');
+      const opening = !menu.classList.contains('open');
+      menu.classList.toggle('open', opening);
+      btn.classList.toggle('open', opening);
+      nav.classList.toggle('nav-hidden', opening);
     }
+    function closeMenu() {
+      document.getElementById('nav-mobile-menu').classList.remove('open');
+      document.getElementById('nav-hamburger').classList.remove('open');
+      document.getElementById('main-nav').classList.remove('nav-hidden');
+    }
+ 
   </script>
 </body>
 </html>
