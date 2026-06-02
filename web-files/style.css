@@ -1,7 +1,7 @@
 :root {
   --bg: #ffffff;
   --surface: #fafafa;
-  --text: #444444;
+  --text: #3a3a3a;
   --muted: #464646;
   --border: rgba(32, 32, 32, 0.1);
   --accent: #006c97;
@@ -625,6 +625,10 @@ footer { padding: 2rem 0; }
   .about-photo-wrap { position: static; }
   .about-photo { aspect-ratio: 4/3; }
   .about-photo img { height: 100%; }
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
 }
 @media (max-width: 720px) {
   nav { top: 0.75rem; }
@@ -635,6 +639,9 @@ footer { padding: 2rem 0; }
   .cs-section-1 { border-radius: 24px; padding: 1.5rem; }
   .cs-close-pill { bottom: 1.25rem; padding: 0.65rem 1.4rem; font-size: 13px; }
   .footer-inner { font-size: 13px; }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 }
  
 /* hide nav (but keep hamburger tappable) when menu is open */
@@ -692,12 +699,12 @@ nav.nav-hidden .nav-hamburger {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 5px;
   flex-shrink: 0;
 }
 .nav-hamburger span {
   display: block;
-  width: 22px;
+  width: 25px;
   height: 2px;
   background: #ffffff;
   border-radius: 2px;
@@ -720,25 +727,74 @@ nav.nav-hidden .nav-hamburger {
   gap: 0;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.15s ease;
 }
 .nav-mobile-menu.open {
   opacity: 1;
   pointer-events: all;
+  gap: 2.5rem;
 }
 .nav-mobile-menu a {
   font-size: 2rem;
   font-weight: 400;
   font-family: 'Figtree', serif;
-  color: var(--text);
+  color: #3a3a3a;
   text-decoration: none;
   padding: 1rem 2rem;
   width: 100%;
   text-align: center;
-  transition: color 0.2s;
+  
 }
-.nav-mobile-menu a:hover { color: var(--accent); }
- 
+
+/* ── TOP-OF-PAGE BLUR SCRIM ── */
+.nav-blur-scrim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  z-index: 99; /* just below the nav (z-index: 100) */
+  pointer-events: none;
+  /* Mask fades from fully visible at top to transparent at bottom */
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /* Subtle white tint so the blur reads cleanly */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.1) 60%,
+    transparent 100%
+  );
+  /* Fade the scrim in/out via JS */
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.nav-blur-scrim.visible {
+  opacity: 1;
+}
+
+/* ── TABLET: switch to hamburger earlier to avoid squashing ── */
+@media (min-width: 641px) and (max-width: 860px) {
+  nav {
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    transform: none;
+    width: auto;
+  }
+  .nav-inner {
+    border-radius: 999px;
+    gap: 0;
+    padding: 0.5rem 1.5rem;
+    justify-content: space-between;
+  }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile-menu { display: flex; }
+}
+
 /* ── TABLET + PHONE: pill stretches full width ── */
 @media (max-width: 640px) {
   nav {
@@ -754,6 +810,9 @@ nav.nav-hidden .nav-hamburger {
   object-fit: contain;
   display: block;
   } 
+  .nav-mobile-menu a {
+    font-size: 1.5rem;
+  }
   .nav-inner { border-radius: 999px; gap: 0; padding: 0.5rem 1.5rem 0.5rem 1.5rem; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
@@ -768,12 +827,12 @@ nav.nav-hidden .nav-hamburger {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
-  color: var(--text);
+  padding: 10px;
+  color: #939393;
   transition: opacity 0.2s;
 }
-.nav-mobile-close:hover { opacity: 0.4; }
-.nav-mobile-close svg { width: 28px; height: 28px; display: block; }
+/* .nav-mobile-close:hover { opacity: 0.4; } */
+.nav-mobile-close svg { width: 30px; height: 30px; display: block; }
 
 /* ── HIDE NAV WHEN MENU IS OPEN ── */
 nav.nav-hidden {

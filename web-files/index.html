@@ -13,6 +13,9 @@
 </head>
 <body>
 
+  <!-- ═══ BLUR SCRIM ═══ -->
+  <div class="nav-blur-scrim" id="nav-blur-scrim"></div>
+
   <!-- ═══ NAV ═══ -->
    <nav id="main-nav">
     <div class="nav-inner">
@@ -27,7 +30,6 @@
       </button>
     </div>
   </nav>
-  <div class="top-blur" aria-hidden="true"></div>
   <div class="nav-mobile-menu" id="nav-mobile-menu">
     <button class="nav-mobile-close" onclick="closeMenu()" aria-label="Close menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -240,6 +242,18 @@
  
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCase(); });
  
+    // scroll-triggered blur scrim
+    const blurScrim = document.getElementById('nav-blur-scrim');
+    function updateScrim() {
+      if (window.scrollY > 20) {
+        blurScrim.classList.add('visible');
+      } else {
+        blurScrim.classList.remove('visible');
+      }
+    }
+    window.addEventListener('scroll', updateScrim, { passive: true });
+    updateScrim(); // run once on load
+
     // active nav on scroll
     const navLinks = document.querySelectorAll('.nav-link');
     const observer = new IntersectionObserver(entries => {
