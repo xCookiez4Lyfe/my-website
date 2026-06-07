@@ -489,7 +489,7 @@ footer { padding: 2rem 1.5rem; }
     justify-content: space-between;
     align-items: center;
     font-size: 15px;
-    color: var(--muted);
+    color: var(--text);
     background: rgb(245, 245, 245);
     border-radius: 35px;
 }
