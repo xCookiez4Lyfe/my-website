@@ -17,7 +17,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   min-height: 100vh;
 }
 
@@ -98,13 +98,15 @@ nav {
 .nav-links a.active { color: white; background:rgba(172, 172, 172, 0.37); }
 
 /* PAGES - now single scroll, sections always visible */
-section { padding: 2rem; }
+section { 
+  padding: 2rem;
+}
 
 /* WRAPPER */
 .wrap {
   max-width: 1680px;
   margin: 0 auto;
-  /* padding: 0 2rem; */
+  /* padding: 0 1.5rem; */
 }
 
 /* ── WORK PAGE ── */
@@ -139,16 +141,14 @@ section { padding: 2rem; }
 /* PROJECT GRID */
 
 #projects{
-  height: 100vh;
+  height: auto;
 }
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  background-color: rgb(245, 245, 245);
-  border-radius: 25px;
-  padding: 2rem;
+  border-radius: 15px;
 }
 .project-card {
   overflow: hidden;
@@ -172,10 +172,10 @@ section { padding: 2rem; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.1rem;
-  font-style: italic;
+  font-family: 'Montserrat', serif;
+  font-size: 1.5rem;
   overflow: hidden;
+  
 }
 .project-thumb img {
   width: 100%;
@@ -183,6 +183,10 @@ section { padding: 2rem; }
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+  /* border: 5px solid rgb(255, 255, 255);
+  border-radius: 15px; */
+  
+  
 }
 .project-card:hover .project-thumb img {
   transform: scale(1.04);
@@ -203,7 +207,7 @@ section { padding: 2rem; }
 .project-card:hover .project-overlay { opacity: 1; }
 
 .project-overlay h3 {
-  font-size: 18px;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #ffffff;
   margin-bottom: 6px;
@@ -367,6 +371,60 @@ section { padding: 2rem; }
   height: 100vh;
 }
 
+.story-header {
+  margin-bottom: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 2rem;
+}
+.story-header h1 {
+  font-family: 'Figtree', serif;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.2;
+  max-width: 840px;
+  text-align: center;
+
+}
+
+.story-sub {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* Tablet: equal columns */
+@media (min-width: 641px) and (max-width: 860px) {
+  /* .story-row,
+  .story-row--reversed {
+    grid-template-columns: 1fr 2fr;
+    height: 500px;
+  } */
+
+  .story-header {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Mobile: stack all cells in a single column */
+@media (max-width: 640px) {
+  /* .story-row,
+  .story-row--reversed {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .story-cell {
+    height: 300px;
+  } */
+
+  .story-header {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 400px 1fr;
@@ -524,9 +582,6 @@ footer { padding: 2rem 1.5rem; }
 }
  
 /* close bar — scrolls with content */
-.cs-bottom-bar {
-
-}
 .cs-close-pill {
   display: flex;
   align-items: center;
@@ -598,7 +653,7 @@ footer { padding: 2rem 1.5rem; }
   margin-bottom: 2rem;
 }
 .cs-body-text p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
   line-height: 1.85;
   margin-bottom: 1.25rem;
@@ -665,8 +720,8 @@ footer { padding: 2rem 1.5rem; }
   .about-photo { aspect-ratio: 4/3; }
   .about-photo img { height: 100%; }
   .project-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 1.5rem;
+    grid-template-columns: repeat(2, 2fr);
+
   }
 
   .home {
@@ -692,6 +747,12 @@ footer { padding: 2rem 1.5rem; }
   .work-header h1 {
     font-size: 3.5rem;
   }
+
+  .story-header h1 {
+    font-size: 3.5rem;
+  }
+
+  
 }
 @media (max-width: 720px) {
   nav { top: 0.75rem; }
@@ -704,7 +765,6 @@ footer { padding: 2rem 1.5rem; }
 
   .project-grid {
     grid-template-columns: 1fr;
-    padding: 1rem;
   }
 
   .home {
@@ -720,6 +780,14 @@ footer { padding: 2rem 1.5rem; }
   .home h4 {
   font-size: 1rem;
   text-align: center;
+  }
+
+  .cs-title {
+  font-size: 3.5rem;
+  }
+
+  .cs-body-text p {
+    font-size: 14px;
   }
 
 }
@@ -828,9 +896,10 @@ nav.nav-hidden .nav-hamburger {
 .nav-mobile-links {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: 2rem 0;
   margin-top: 3rem;
   flex: 1;
+  gap: 2.5rem;
 }
 .nav-mobile-link {
   font-size: 1.6rem;
@@ -899,7 +968,18 @@ nav.nav-hidden .nav-hamburger {
     max-width: 600px;
   }
 
+  .cs-wrap {
+  padding: 2rem 3rem;
   
+  }
+
+  .cs-hero-img img {
+  height: 50%;
+  }
+
+  .wrap {
+    padding: 0 1.5rem;
+  }
 }
 
 /* ── TABLET + PHONE: pill stretches full width ── */
@@ -948,6 +1028,15 @@ nav.nav-hidden .nav-hamburger {
 
   .work-header h1 {
     font-size: 2.75rem;
+  }
+
+  .story-header h1 {
+    font-size: 2.75rem;
+  }
+
+  .cs-wrap {
+  padding: 2rem 2rem;
+
   }
 
 }
