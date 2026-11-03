@@ -147,6 +147,11 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-size: .85rem; text-transform: lowercase;
 }
 .foot ul { display: flex; gap: 1.5rem; }
+.foot { align-items: center; }
+.foot .social { align-items: center; }
+.foot .social a { display: inline-flex; padding: .25rem; }
+.foot .social svg { width: 22px; height: 22px; display: block; transition: transform .2s; }
+.foot .social a:hover svg, .foot .social a:focus-visible svg { transform: translateY(-2px); }
 .foot p { margin: 0; }
 .foot a:hover { color: var(--accent-text); }
 
@@ -170,7 +175,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
 .links a { color: var(--accent-text); }
 .links a:hover { text-decoration: underline 3px var(--gold); text-underline-offset: 5px; }
-.links .resume { font-weight: 700; text-decoration: underline; }
+.links .resume { font-weight: 700;}
 
 /* Photo placeholder */
 .portrait { justify-self: end;}
@@ -301,5 +306,36 @@ ul { list-style: none; margin: 0; padding: 0; }
 .cs-next .back:hover::before, .cs-next .back:focus-visible::before { transform: translateX(-6px); }
 .cs-next .back:hover { color: var(--accent-text); }
 @media (prefers-reduced-motion: reduce) {
-  .cs-next a.big::after, .cs-next .back::before { transition: none; }
+  .cs-next a.big::after, .cs-next .back::before, .foot .social svg { transition: none; }
+}
+/* Tools I use: icon buttons with a label that pops up on hover, focus or click */
+.tools { display: flex; flex-wrap: wrap; gap: .75rem; margin: 0 0 1rem; }
+.tool {
+  position: relative;
+  display: grid; place-items: center;
+  width: 3.25rem; height: 3.25rem; padding: 0;
+  background: var(--bg);
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform .2s, border-color .2s;
+}
+.tool:hover, .tool:focus-visible, .tool.open { transform: translateY(-2px); border-color: var(--accent); }
+.tool img { display: block; width: 28px; height: 28px; }
+.tool .tip {
+  position: absolute; left: 50%; bottom: calc(100% + 10px);
+  transform: translate(-50%, 4px);
+  padding: .25rem .7rem;
+  background: var(--accent); color: #fff;
+  border-radius: 8px; font-family: var(--body); font-size: .85rem; line-height: 1.5; white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity .15s, transform .15s;
+}
+.tool .tip::after {
+  content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  border: 5px solid transparent; border-top-color: var(--accent);
+}
+.tool:hover .tip, .tool:focus-visible .tip, .tool.open .tip { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) {
+  .tool, .tool .tip { transition: none; }
 }
