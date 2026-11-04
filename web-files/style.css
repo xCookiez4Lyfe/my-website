@@ -181,7 +181,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .links .resume { font-weight: 700;}
 
 /* Photo placeholder */
-.portrait { justify-self: end;}
+.portrait { justify-self: center;}
 .portrait-ph, .portrait img {
   width: 100%; aspect-ratio: 7 / 8;
   display: grid; place-items: center;
@@ -359,7 +359,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
   /* About: photo first, smaller */
   .about { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 3.5rem; }
-  .portrait { order: -1; justify-self: start; width: min(100%, 15rem); }
+  .portrait { order: -1; justify-self: center; width: 100% }
   .touch { margin-top: 2.5rem; }
 
   /* Case studies */
