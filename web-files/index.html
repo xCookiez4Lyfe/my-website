@@ -9,12 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lexend:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
   <header class="top">
     <a class="name" href="index.html">Thanish. J</a>
-    <nav aria-label="Main">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="bars" aria-hidden="true"></span></button>
+    <nav id="site-nav" aria-label="Main">
       <a href="index.html#work" aria-current="page">Projects</a>
       <a href="about.html">About</a>
     </nav>
@@ -25,8 +27,8 @@
     <section class="hero">
       <div class="art" role="img" aria-label="Left illustration placeholder"><img src="images/sun.png" alt="" /></div>
       <div class="hero-text">
-        <h1>Junior Designer & <br>Front-End Developer</h1>
-        <p>Based in Melbourne, I focus on creating inclusive and <br>accessible digital experiences that solve real-world problems.</p>
+        <h1>Junior Designer & <br> Front-End Developer</h1>
+        <p>I focus on creating inclusive and accessible digital experiences that solve real-world problems.</p>
       </div>
       <div class="art" role="img" aria-label="Right illustration placeholder"><img src="images/star.png" alt="" /></div>
     </section>
@@ -42,6 +44,14 @@
           <div class="thumb tall" role="img" aria-label="Card game workshop cover"></div>
           <p class="caption">Accessible Tech Card Game Workshop</p>
         </a>
+        <a class="project" href="project-3.html">
+          <div class="thumb tall teal" role="img" aria-label="Project three cover"></div>
+          <p class="caption">Project three title</p>
+        </a>
+        <a class="project" href="project-4.html">
+          <div class="thumb wide" role="img" aria-label="Project four cover"></div>
+          <p class="caption">Project four title</p>
+        </a>
       </div>
     </section>
 
@@ -56,5 +66,6 @@
     <p>© 2026 Thanish Janarthan</p>
   </footer>
 
+  <script src="nav.js" defer></script>
 </body>
 </html>

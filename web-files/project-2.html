@@ -9,12 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lexend:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
   <header class="top">
     <a class="name" href="index.html">Thanish. J</a>
-    <nav aria-label="Main">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span class="bars" aria-hidden="true"></span></button>
+    <nav id="site-nav" aria-label="Main">
       <a href="index.html#work" aria-current="page">Projects</a>
       <a href="about.html">About</a>
     </nav>
@@ -119,7 +121,7 @@
 
     <section class="cs-next">
       <h2 class="label">Next project</h2>
-      <a class="big" href="project-1.html">EezyHome App Concept</a>
+      <a class="big" href="project-3.html">Project three title</a>
       <a class="back" href="index.html#work">Back to all projects</a>
     </section>
 
@@ -134,5 +136,6 @@
     <p>© 2026 Thanish Janarthan</p>
   </footer>
 
+  <script src="nav.js" defer></script>
 </body>
 </html>
