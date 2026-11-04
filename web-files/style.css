@@ -372,11 +372,21 @@ ul { list-style: none; margin: 0; padding: 0; }
 
   /* Three screens: swipe sideways instead of a long stack */
   .shots.three {
-    display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory;
-    margin-inline: calc(var(--pad) * -1); padding: 0 var(--pad) .5rem;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    margin-inline: calc(var(--pad) * -1);  /* cancels the section padding so the strip can reach the screen edges */
+    padding: 0 var(--pad) .5rem;           /* puts the first image back in line with the h2 */
+    scroll-padding-inline: var(--pad);     /* makes the snap point match, so the first image doesn't jump to the edge */
     scrollbar-width: thin;
   }
-  .shots.three .shot { flex: 0 0 72%; scroll-snap-align: start; }
+
+  .shots.three .shot {
+    flex: 0 0 72%;
+    scroll-snap-align: start;
+  }
 }
 
 /* Small phones */
