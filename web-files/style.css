@@ -116,7 +116,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   gap: 2rem;
   padding: clamp(1.5rem, 5vw, 3.5rem) var(--pad) clamp(3rem, 8vw, 6rem);
 }
-.hero-text { flex: 1 1 32rem; max-width: 28rem; margin: 0 auto; text-align: center; }
+.hero-text { flex: 1 1 32rem; max-width: 26rem; margin: 0 auto; text-align: center; }
 .hero h1 {
   margin: 0 0 1rem;
   font-family: var(--display); font-weight: 500;
