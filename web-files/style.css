@@ -92,7 +92,6 @@ ul { list-style: none; margin: 0; padding: 0; }
 .top {
   display: flex; justify-content: space-between; align-items: center;
   padding: 1.5rem var(--pad);
-  text-transform: lowercase;
 }
 .top nav { display: flex; gap: clamp(1.25rem, 5vw, 2.5rem); }
 .top a { padding: .5rem 0; font-weight: 400; font-size: 1.125rem; }
@@ -148,16 +147,16 @@ ul { list-style: none; margin: 0; padding: 0; }
 .foot {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
   padding: 1.5rem var(--pad) 2rem;
-  font-size: .85rem; text-transform: lowercase;
+  font-size: .85rem;
   background-color: var(--bg);
 }
 .foot ul { display: flex; gap: 1.5rem; }
 .foot { align-items: center; }
 .foot .social { align-items: center; }
 .foot .social a { display: inline-flex; padding: .6rem; }
-.foot .social img { width: 22px; height: 22px; display: block; opacity: .85; transition: transform .2s, opacity .2s; }
+.foot .social img { width: 25px; height: 25px; display: block; opacity: .85; transition: transform .2s, opacity .2s; }
 .foot .social a:hover img, .foot .social a:focus-visible img { transform: translateY(-2px); opacity: 1; }
-.foot p { margin: 0; }
+.foot p { margin: 0; font-size: 0.95rem;}
 .foot a:hover { color: var(--accent-text); }
 
 /* About page */
@@ -306,19 +305,30 @@ ul { list-style: none; margin: 0; padding: 0; }
   .cs-next a.big::after, .cs-next .back::before, .foot .social img { transition: none; }
 }
 /* Tools I use: icon buttons with a label that pops up on hover, focus or click */
-.tools { display: flex; flex-wrap: wrap; gap: .75rem; margin: 0 0 1rem; }
+.tools { display: flex; flex-wrap: wrap; gap: .85rem; margin: 0 0 1rem; }
 .tool {
+  --r: 0deg;
   position: relative;
   display: grid; place-items: center;
-  width: 3.25rem; height: 3.25rem; padding: 0;
+  width: 3.5rem; height: 3.5rem; padding: .55rem;
   background: var(--bg);
-  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
-  border-radius: 14px;
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  box-shadow: 3px 3px 0 var(--accent);
   cursor: pointer;
-  transition: transform .2s, border-color .2s;
+  transform: rotate(var(--r));
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .2s;
 }
-.tool:hover, .tool:focus-visible, .tool.open { transform: translateY(-2px); border-color: var(--accent); }
-.tool img { display: block; width: 28px; height: 28px; }
+/* Sticker-style tilt: each tile leans a little differently */
+.tools li:nth-child(odd)  .tool { --r: -3deg; }
+.tools li:nth-child(even) .tool { --r: 2.5deg; }
+.tools li:nth-child(3n)   .tool { --r: -1.5deg; }
+.tool:hover, .tool:focus-visible, .tool.open {
+  transform: rotate(0deg) translateY(-6px) scale(1.1);
+  box-shadow: 5px 6px 0 var(--accent);
+  z-index: 2;
+}
+.tool img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .tool .tip {
   position: absolute; left: 50%; bottom: calc(100% + 10px);
   transform: translate(-50%, 4px);
@@ -340,7 +350,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ===== Responsive ===== */
 /* Touch devices: no sticky hover state on tool buttons; tapping toggles the label */
 @media (hover: none) {
-  .tool:not(.open):hover { transform: none; border-color: color-mix(in srgb, var(--ink) 18%, transparent); }
+  .tool:not(.open):hover { transform: rotate(var(--r)); box-shadow: 3px 3px 0 var(--accent); }
   .tool:not(.open):hover .tip { opacity: 0; transform: translate(-50%, 4px); }
 }
 
@@ -394,7 +404,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   .top nav { gap: 1.25rem; }
   .tldr { font-size: 1.0625rem; padding: .9rem 1rem; }
   .stat strong { font-size: 2rem; }
-  .foot { flex-direction: column; justify-content: center; text-align: center; gap: .5rem; }
+  .foot { flex-direction: column; justify-content: center; text-align: center; gap: 1.5rem; }
   .foot ul { gap: .75rem; justify-content: center; }
 }
 
@@ -449,3 +459,24 @@ ul { list-style: none; margin: 0; padding: 0; }
   .nav-toggle .bars, .nav-toggle .bars::before, .nav-toggle .bars::after,
   .js .top nav { transition: none; }
 }
+
+/* Tool groups on the About page */
+/* Tools: their own section under the intro and photo, groups stacked */
+.about-tools { grid-column: 1 / -1; }
+.about-tools .label { margin-bottom: 1.25rem; }
+.tools-intro { margin: 0 0 1.75rem; color: var(--grey); font-size: .95rem; }
+
+/* Tool cards: one colourful card per group */
+.tool-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 2rem; }
+.tool-group {
+  position: relative;
+  padding: 1.25rem 1.25rem 1.5rem;
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--blue) 14%, var(--bg));
+}
+.tool-group:nth-child(2) { background: color-mix(in srgb, var(--gold) 24%, var(--bg)); }
+.tool-group:nth-child(3) { background: color-mix(in srgb, var(--accent) 13%, var(--bg)); }
+
+.tool-group h3 { margin: 0; font-size: 1.25rem; font-weight: 600; color: var(--accent); margin-bottom: 1.5rem;}
+.tool-tag { margin: .1rem 0 1.5rem; font-size: .9rem; color: var(--grey); }
+.tool-group .tools { margin: 0; }
