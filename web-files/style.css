@@ -364,6 +364,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   .hero .art:first-child { justify-self: start; }
   .hero .art:last-child { justify-self: end; }
   .hero-text { max-width: none; margin: 0; }
+  .hero-text p { padding-left: 1.5rem; padding-right: 1.5rem;}
 
   /* Projects: single column */
   .projects { grid-template-columns: 1fr; gap: 2.5rem; }

@@ -25,18 +25,18 @@
   <main>
 
     <section class="cs-hero">
-      <p class="eyebrow">University capstone / 2.5D action-adventure game</p>
+      <p class="eyebrow">Academic project</p>
       <h1>Lord Quacksalot and the Soup of Doom</h1>
-      <p class="cs-sub">A 2.5D hybrid action-adventure game that blends pixel-art characters with stylized 3D worlds, made by a cross-functional student team.</p>
+      <p class="cs-sub">A 2.5D hybrid action-adventure game that blends pixel-art characters with stylized 3D worlds, made by a team of 5 students from Monash University.</p>
 
       <dl class="facts">
-        <div><dt>Project type</dt><dd>University capstone project</dd></div>
-        <div><dt>My role</dt><dd>Lead character and environmental artist, UI designer</dd></div>
-        <div><dt>Timeline</dt><dd>1 year (two semesters, 2025)</dd></div>
-        <div><dt>Tools</dt><dd>Unreal Engine, Maya, Substance Painter, Aseprite, Photoshop</dd></div>
+        <div><dt>Project type</dt><dd>Digital game</dd></div>
+        <div><dt>My role</dt><dd>Lead artist</dd></div>
+        <div><dt>Timeline</dt><dd>1 year</dd></div>
+        <div><dt>Tools</dt><dd>UE5, Substance Painter, Aseprite</dd></div>
       </dl>
 
-      <p class="tldr"><strong>Summary:</strong> Jumping between 2D pixel art and 3D worlds across very different genres can leave players lost. As lead artist and UI designer, I gave the 8 enemy characters one consistent look, built three 3D realms around them and designed a UI that tied the worlds together. Feedback from peers and tutors shaped a polished three-stage boss fight.</p>
+      <p class="tldr"><strong>Summary:</strong> A team of 5 students created an action-adventure game by combining 2D characters inside a 3D environment. As lead artist, I designed 8 unique enemy characters, textured environments for 3 different levels and designed UI elements that helped tie them together.</p>
     </section>
 
     <figure class="cs-cover">
@@ -47,10 +47,10 @@
     <section class="cs-section">
       <h2>The problem</h2>
       <div class="cs-body">
-        <p>The game hops between genres and between 2D and 3D, and it was also my first time working with pixel art and Unreal Engine.</p>
+        <!-- <p>The game implements 2D sprites into a 3D world, with different  themes for each level. It was also my first time working with pixel art and Unreal Engine.</p> -->
         <ul>
-          <li><strong>Visual disconnect and thematic whiplash:</strong> moving between 2D pixel art and fully 3D environments across fast-changing genres, from wild west to horror, risks a jarring look where players feel lost.</li>
-          <li><strong>A steep learning curve:</strong> I had no prior game design theory and had to push through imposter syndrome next to peers with heavy coding backgrounds, so I learned the technical skills on the fly.</li>
+          <li>Moving between 2D pixel art and fully 3D environments across different genres risks creating a visual disconnect and thematic whiplash, causing players to feel lost.</li>
+          <li>I had no prior game design theory or experience working on pixel art, so I learned the technical skills on the fly.</li>
         </ul>
       </div>
     </section>
@@ -59,26 +59,26 @@
       <h2>The goal</h2>
       <div class="cs-body">
         <ul>
-          <li><strong>Cohesive art direction:</strong> build one visual language that bridges 2D pixel-art characters and stylized 3D environments.</li>
-          <li><strong>Agile iteration:</strong> start with small prototypes and use early feedback from tutors and peers to check the art direction and mechanics before full implementation.</li>
-          <li><strong>Cross-functional collaboration:</strong> lean into my strengths as an artist and designer to work with the developers instead of competing with them.</li>
+          <li>Create a cohesive art direction that bridges 2D pixel-art characters and stylized 3D environments.</li>
+          <li>Start with small prototypes and seek early feedback from tutors and peers to constantly improve the art direction and mechanics before full implementation.</li>
+          <!-- <li>Create a cross functional team by leaning into my strengths as a designer to create an efficient workflow with the developers.</li> -->
         </ul>
       </div>
     </section>
 
     <section class="cs-section">
-      <h2>Insights and decisions</h2>
+      <h2>Insights & decisions</h2>
       <div class="cs-body">
         <div class="steps stack">
           <div class="step">
-            <h3>Characters must stay readable as the world changes</h3>
-            <p><strong>Finding:</strong> the game has three very different realms: a gritty, low-saturation Wild West, a high-contrast black-and-white 1920s Broadway theatre, and an industrial set lit by bright white, red and green sensor lights. With lighting and genre changing so fast, players could easily lose flat 2D sprites against detailed 3D backgrounds.<br>
-            <strong>Decision:</strong> I standardized the color palettes and silhouettes of the 8 enemy characters in Photoshop and Aseprite. With one consistent 2D look, they stayed instantly readable in a desaturated desert or under bright industrial spotlights built in Substance Painter.</p>
+            <h3>Characters must stay visible when environments change</h3>
+            <p><strong>Finding:</strong> With lighting and textures changing constantly, players could easily lose flat 2D sprites against detailed 3D backgrounds.<br>
+            <strong>Decision:</strong> I standardised the color palettes and silhouettes of the 8 enemy characters in order to remain clear in different environments even with various outfits and features.</p>
           </div>
           <div class="step">
-            <h3>The UI needs to ground the player</h3>
-            <p><strong>Finding:</strong> the dimension-hopping story was intentionally chaotic, so players needed a visual anchor to avoid spatial confusion.<br>
-            <strong>Decision:</strong> I designed the core UI, including health bars, menus and loading screens, in one consistent, stylized language that ties the different worlds together.</p>
+            <h3>User interfaces (UI) help track player progress</h3>
+            <p><strong>Finding:</strong> The dimension-hopping story was intentionally chaotic, so players needed a visual anchor to avoid confusion.<br>
+            <strong>Decision:</strong> I designed UI elements, including health bars, buttons and loading screens, in a consistent style that ties the different levels and characters together.</p>
           </div>
         </div>
       </div>
@@ -88,13 +88,13 @@
       <h2>The solution</h2>
       <div class="cs-body">
         <div class="shots three">
-          <figure class="shot"><div class="ph" role="img" aria-label="Wild West realm">Wild West</div><figcaption>Gritty, low-saturation Wild West</figcaption></figure>
-          <figure class="shot"><div class="ph" role="img" aria-label="Broadway theatre realm">Broadway theatre</div><figcaption>Black-and-white 1920s Broadway theatre</figcaption></figure>
-          <figure class="shot"><div class="ph" role="img" aria-label="Industrial production set realm">Industrial set</div><figcaption>Industrial set with sensor lights</figcaption></figure>
+          <figure class="shot"><div class="ph" role="img" aria-label="Wild West realm">Wild West</div><figcaption>Level 1: Wild West shooter</figcaption></figure>
+          <figure class="shot"><div class="ph" role="img" aria-label="Broadway theatre realm">Broadway theatre</div><figcaption>Level 2: Broadway theatre maze</figcaption></figure>
+          <figure class="shot"><div class="ph" role="img" aria-label="Industrial production set realm">Industrial set</div><figcaption>Level 3: Industrial movie set</figcaption></figure>
         </div>
         <ul>
-          <li><strong>Themed 2.5D environments:</strong> I modeled and textured three distinct 3D realms in Substance Painter, built to frame the 2D characters. The geometry and lighting of each theme communicate the genre shift and its hazards without text tutorials, an approach based on visual affordances and environmental storytelling.</li>
-          <li><strong>Animated trophies:</strong> I created and animated 3 unique trophy objects for each level as clear visual goals. These rewards encourage exploration and show players they have mastered a realm&rsquo;s mechanics, a feedback loop borrowed from gamification.</li>
+          <li><strong>Themed environments:</strong> I textured three distinct 3D levels using different color palettes and materials to indicate the genre shifts without relying on text.</li>
+          <li><strong>Animated trophies:</strong> I created and animated trophy objects for each level as a progress indicator. These rewards show players they have mastered a realm&rsquo;s mechanics.</li>
         </ul>
       </div>
     </section>
@@ -103,11 +103,11 @@
       <h2>The results</h2>
       <div class="cs-body">
         <div class="stats">
-          <div class="stat"><strong>8</strong><span>enemy characters with one consistent look</span></div>
-          <div class="stat"><strong>3</strong><span>distinct 3D realms</span></div>
-          <div class="stat"><strong>3</strong><span>stages in the polished boss fight</span></div>
+          <div class="stat"><strong>8</strong><span>enemy character designs</span></div>
+          <div class="stat"><strong>36</strong><span>unique character animations</span></div>
+          <div class="stat"><strong>3</strong><span>themed levels with trophies</span></div>
         </div>
-        <p>Regular feedback from peers and tutors helped me solve design problems quickly and check my ideas. Adapting to it led to a polished three-stage boss fight where players naturally used everything they had learned. Playtests showed positive player engagement, and the art and development sides worked well together.</p>
+        <p>Constructive feedback from peers and tutors during playtest sessions helped me solve design problems and keep my ideas grounded. Playtests showed positive player engagement, and they naturally used the mechanics they had learned from different levels in the three-stage boss fight.</p>
       </div>
     </section>
 
@@ -115,9 +115,9 @@
       <h2>What I learned</h2>
       <div class="cs-body">
         <ul>
-          <li>Game design principles like spatial landscaping and character animation transfer well to traditional UX/UI and mobile app design.</li>
-          <li>I overcame imposter syndrome by leaning into my creative strengths and teaching myself outside of class, reaching professional proficiency in Maya, Substance Painter and Unreal Engine.</li>
-          <li>A year-long project vastly improved my presentation skills, so I can explain my creative process clearly to different audiences.</li>
+          <li>Game design principles like environment and HUD design are transferrable to UX/UI projects.</li>
+          <li>Building testable prototypes early and leaning into my visual design strengths to support the programmers taught me how agile collaboration works in practice.</li>
+          <li>Ensuring characters and HUD elements stayed visible across different environments directly translates to designing accessible UI systems across light and dark modes.</li>
         </ul>
       </div>
     </section>
