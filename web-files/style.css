@@ -1,12 +1,13 @@
 :root {
   --bg: #ffffff;
-  --ink: #454545;
-  --accent: #1a535c;                /* headings, active links */
-  --accent-text: #1a535c;
-  --blue: #3da5d9;
+  --ink: #4e4e4e;
+  --accent: #294f68;                /* headings, active links */
+  --accent-text: #445764;
+  --blue: #0d94d8;
   --gold: #fec601;
   --grey: #454545;
   --tint: #c9e5f4;
+  --on-accent: #ffffff;           /* text on accent-coloured buttons */
   --max: 72rem; /* content width */
   --pad: max(clamp(1.25rem, 4vw, 2.75rem), calc((100vw - var(--max)) / 2));
   --display: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;   /* h1, h2, big numbers */
@@ -95,7 +96,11 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .top nav { display: flex; gap: clamp(1.25rem, 5vw, 2.5rem); }
 .top a { padding: .5rem 0; font-weight: 400; font-size: 1.125rem; }
-.top a:hover { color: var(--accent-text); }
+.top a {
+  text-decoration: underline 3px transparent; text-underline-offset: 8px;
+  transition: color .2s, text-decoration-color .2s;
+}
+.top a:hover, .top a:focus-visible { color: var(--accent); text-decoration-color: var(--gold); }
 .top nav a[aria-current="page"] {
   color: var(--accent-text);
   text-decoration: underline 3px var(--gold);
@@ -333,7 +338,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: absolute; left: 50%; bottom: calc(100% + 10px);
   transform: translate(-50%, 4px);
   padding: .25rem .7rem;
-  background: var(--accent); color: #fff;
+  background: var(--accent); color: var(--on-accent);
   border-radius: 8px; font-family: var(--body); font-size: .85rem; line-height: 1.5; white-space: nowrap;
   opacity: 0; pointer-events: none;
   transition: opacity .15s, transform .15s;
@@ -473,10 +478,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: relative;
   padding: 1.25rem 1.25rem 1.5rem;
   border-radius: 22px;
-  background: color-mix(in srgb, var(--blue) 14%, var(--bg));
+  background: color-mix(in srgb, var(--tint) 30%, var(--bg));
 }
-.tool-group:nth-child(2) { background: color-mix(in srgb, var(--gold) 24%, var(--bg)); }
-.tool-group:nth-child(3) { background: color-mix(in srgb, var(--accent) 13%, var(--bg)); }
+.tool-group:nth-child(2) { background: color-mix(in srgb, var(--tint) 30%, var(--bg)); }
+.tool-group:nth-child(3) { background: color-mix(in srgb, var(--tint) 30%, var(--bg)); }
 
 .tool-group h3 { margin: 0; font-size: 1.25rem; font-weight: 600; color: var(--accent); margin-bottom: 1.5rem;}
 .tool-tag { margin: .1rem 0 1.5rem; font-size: .9rem; color: var(--grey); }
@@ -491,7 +496,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .connect-icon {
   display: grid; place-items: center; width: 100%; height: 100%;
   border-radius: 50%;
-  background: var(--accent); color: #fff;
+  background: var(--accent); color: var(--on-accent);
   box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
   transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
 }
@@ -524,4 +529,96 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .connect-icon, .connect-bubble { transition: none; }
+}
+
+/* ===== Micro animations: home illustrations, project images, About portrait ===== */
+@keyframes pop-in-left  { from { opacity: 0; transform: rotate(-35deg) scale(.7); } to { opacity: 1; transform: none; } }
+@keyframes pop-in-right { from { opacity: 0; transform: rotate(35deg)  scale(.7); } to { opacity: 1; transform: none; } }
+@keyframes portrait-in  { from { opacity: 0; transform: translateY(18px) rotate(-4deg) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes sway  { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
+@keyframes float { from { transform: translateY(0); } to { transform: translateY(-7px); } }
+
+/* Home: sun and star pop in when the page loads, then drift gently */
+.hero .art img { transition: transform .45s cubic-bezier(.34, 1.56, .64, 1); }
+.hero .art:first-child img { animation: pop-in-left  .9s cubic-bezier(.34, 1.56, .64, 1) .1s  backwards; }
+.hero .art:last-child img  { animation: pop-in-right .9s cubic-bezier(.34, 1.56, .64, 1) .25s backwards; }
+.hero .art:first-child { animation: sway  6s ease-in-out 1s infinite alternate; }
+.hero .art:last-child  { animation: float 4s ease-in-out 1s infinite alternate; }
+
+/* Home: project images lean and lift on hover, the picture inside zooms a little */
+.thumb { overflow: hidden; }
+.project .thumb { transition: transform .35s cubic-bezier(.34, 1.56, .64, 1), box-shadow .35s; }
+.project .thumb img { transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
+.project:active .thumb { transform: scale(.98); }
+
+/* About: portrait settles in on load and tilts on hover */
+.portrait img, .portrait-ph { transition: transform .45s cubic-bezier(.34, 1.56, .64, 1); }
+
+/* Hover effects only on devices that can hover */
+@media (hover: hover) {
+  .hero .art:first-child img:hover { transform: rotate(-10deg) scale(1.05); }
+  .hero .art:last-child img:hover  { transform: rotate(10deg) scale(1.05); }
+  .project:nth-child(odd):hover  .thumb { transform: translateY(-6px) rotate(-.8deg); box-shadow: 0 10px 10px rgb(180, 180, 180, 0.25); }
+  .project:nth-child(even):hover .thumb { transform: translateY(-6px) rotate(.8deg);  box-shadow: 0 10px 10px rgba(180, 180, 180, 0.25); }
+  .project:hover .thumb img { transform: scale(1.05); }
+  .portrait img:hover, .portrait-ph:hover { transform: rotate(-2.5deg) scale(1.03); }
+}
+
+/* Scroll reveal: cards and tool groups fade up as they come into view (added by motion.js) */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease var(--d, 0ms), transform .6s cubic-bezier(.22, 1, .36, 1) var(--d, 0ms); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .art, .hero .art img, .portrait img, .portrait-ph { animation: none; transition: none; }
+  .project .thumb, .project .thumb img { transition: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .top a { transition: none; }
+}
+
+/* ===== Dark theme (switched by the button in the header) ===== */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f1a22;
+  --ink: #e4e8ec;
+  --accent: #8cc8ea;
+  --accent-text: #8cc8ea;
+  --grey: #c4ccd3;
+  --tint: #1c3548;
+  --on-accent: #0f1a22;
+}
+/* Keep logos readable: tool tiles stay light, grey footer icons flip to light */
+:root[data-theme="dark"] .tool { background: #eef1f4; }
+:root[data-theme="dark"] .foot .social img { filter: invert(1) brightness(1.15); }
+
+/* Theme button: sits at the right of the header (only shown when JavaScript is on) */
+.theme-toggle { display: none; }
+.js .theme-toggle {
+  order: 3; display: grid; place-items: center;
+  width: 2.75rem; height: 2.75rem; padding: 0;
+  background: none; border: 0; border-radius: 50%;
+  color: var(--ink); cursor: pointer;
+  transition: background-color .2s, transform .3s cubic-bezier(.34, 1.56, .64, 1);
+}
+.top nav { order: 2; margin-left: auto; }
+.nav-toggle { order: 4; }
+.theme-toggle svg { width: 1.35rem; height: 1.35rem; }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+.js .theme-toggle:hover { background: color-mix(in srgb, var(--gold) 30%, transparent); transform: rotate(15deg); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 640px) {
+  .js .theme-toggle { margin-left: auto; margin-right: .25rem; }
+}
+
+/* Smooth colour fade while the theme switches */
+html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *::after {
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .theme-toggle { transition: none; }
+  html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *::after { transition: none !important; }
 }
