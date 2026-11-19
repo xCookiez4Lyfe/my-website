@@ -1,13 +1,15 @@
 :root {
-  --bg: #ffffff;
-  --ink: #4e4e4e;
-  --accent: #294f68;                /* headings, active links */
-  --accent-text: #445764;
-  --blue: #0d94d8;
-  --gold: #fec601;
-  --grey: #454545;
-  --tint: #c9e5f4;
-  --on-accent: #ffffff;           /* text on accent-coloured buttons */
+  /* Palette: #5aa9e6  #7fc8f8  #f9f9f9  #ffca0a  #333533 */
+  --bg: #f9f9f9;
+  --ink: #333533;
+  --accent: #476f8d;                /* headings, active links: a darker #5aa9e6 so text stays readable */
+  --accent-text: #476f8d;
+  --blue: #5aa9e6;
+  --sky: #7fc8f8;
+  --gold: #ffca0a;
+  --grey: #333533;
+  --tint: color-mix(in srgb, #7fc8f8 40%, #f9f9f9);
+  --on-accent: #f9f9f9;           /* text on accent-coloured buttons */
   --max: 72rem; /* content width */
   --pad: max(clamp(1.25rem, 4vw, 2.75rem), calc((100vw - var(--max)) / 2));
   --display: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;   /* h1, h2, big numbers */
@@ -246,7 +248,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .step::before {
   content: counter(step);
   display: grid; place-items: center; width: 2rem; height: 2rem; margin-bottom: .75rem;
-  border-radius: 50%; background: var(--gold); color: #1a1a1a; font-family: var(--display);
+  border-radius: 50%; background: var(--gold); color: #333533; font-family: var(--display);
 }
 .step h3 { margin: 0 0 .25rem; font-family: var(--alt); font-weight: 400; font-size: 1.125rem; color: var(--accent); }
 .step p { margin: 0; line-height: 1.6; }
@@ -547,8 +549,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 @media (hover: hover) {
   .hero .art:first-child img:hover { transform: rotate(-10deg) scale(1.05); }
   .hero .art:last-child img:hover  { transform: rotate(10deg) scale(1.05); }
-  .project:nth-child(odd):hover  .thumb { transform: translateY(-6px) rotate(-.8deg); box-shadow: 0 10px 10px rgba(48, 48, 48, 0.1); }
-  .project:nth-child(even):hover .thumb { transform: translateY(-6px) rotate(.8deg);  box-shadow: 0 10px 10px rgba(48, 48, 48, 0.1); }
+  .project:nth-child(odd):hover  .thumb { transform: translateY(-6px) rotate(-.8deg); box-shadow: 0 5px 10px rgba(48, 48, 48, 0.1); }
+  .project:nth-child(even):hover .thumb { transform: translateY(-6px) rotate(.8deg);  box-shadow: 0 5px 10px rgba(48, 48, 48, 0.1); }
   .project:hover .thumb img { transform: scale(1.05); }
   .portrait img:hover, .portrait-ph:hover { transform: rotate(-2.5deg) scale(1.03); }
 }
@@ -570,23 +572,23 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ===== Dark theme (switched by the button in the header) ===== */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0f1a22;
-  --ink: #e4e8ec;
-  --accent: #8cc8ea;
-  --accent-text: #8cc8ea;
-  --grey: #c4ccd3;
-  --tint: #1c3548;
-  --on-accent: #0f1a22;
+  --bg: #333533;
+  --ink: #f9f9f9;
+  --accent: #7fc8f8;
+  --accent-text: #7fc8f8;
+  --grey: #f9f9f9;
+  --tint: color-mix(in srgb, #5aa9e6 24%, #333533);
+  --on-accent: #333533;
 }
 /* Keep logos readable: tool tiles stay light, grey footer icons flip to light */
-:root[data-theme="dark"] .tool { background: #eef1f4; }
+:root[data-theme="dark"] .tool { background: #f9f9f9; }
 :root[data-theme="dark"] .foot .social img { filter: invert(1) brightness(1.15); }
 
 /* Theme button: sits at the right of the header (only shown when JavaScript is on) */
 .theme-toggle { display: none; }
 .js .theme-toggle {
   order: 3; display: grid; place-items: center;
-  width: 2.75rem; height: 2.75rem; padding: 0;
+  width: 2.75rem; height: 2.75rem; padding: 0; margin-left: 2.5rem;
   background: none; border: 0; border-radius: 50%;
   color: var(--ink); cursor: pointer;
   transition: background-color .2s, transform .3s cubic-bezier(.34, 1.56, .64, 1);
