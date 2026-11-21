@@ -133,8 +133,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem clamp(2rem, 8vw, 7rem); align-items: start; }
 .thumb { width: 100%; background: var(--tint); transition: opacity .2s; }
 .thumb.wide { aspect-ratio: 1/1; }
-.thumb.tall { aspect-ratio: 350 / 420; width: 100%; background: var(--gold); }
-.thumb.teal { background: color-mix(in srgb, var(--accent) 30%, var(--bg)); }
+.thumb.tall { aspect-ratio: 3 / 4; width: 100%; }
+/* .thumb.teal { background: color-mix(in srgb, var(--accent) 30%, var(--bg)); } */
 .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .project:hover .caption { text-decoration: underline 3px var(--gold); text-underline-offset: 6px; }
 .caption { margin: 1.25rem 0 0; font-size: 1.125rem; text-transform: none; }
@@ -217,14 +217,15 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* Image placeholders (swap for <img>) */
 .ph, .shot img, .cs-cover img {
   display: grid; place-items: center; width: 100%;
-  background: var(--tint); color: var(--accent-text); font-size: .85rem;
+  /* background: var(--tint); color: var(--accent-text);  */
+  font-size: .85rem;
   object-fit: cover;
 }
 .cs-cover { margin: 0; padding: 0 var(--pad) 1rem; }
 .cs-cover .ph, .cs-cover img { aspect-ratio: 16 / 9; }
 .shot { margin: 0; }
-.shot .ph, .shot img { aspect-ratio: 4 / 3; }
-.shot figcaption { margin-top: .5rem; font-size: .9rem; color: var(--grey); }
+/* .shot .ph, .shot img { aspect-ratio: 4 / 3; } */
+.shot figcaption { margin-top: .75rem; font-size: .9rem; color: var(--grey); }
 
 /* Sections: heading on the left, content on the right (easy to scan) */
 .cs-section {
@@ -253,7 +254,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .step h3 { margin: 0 0 .25rem; font-family: var(--alt); font-weight: 400; font-size: 1.125rem; color: var(--accent); }
 .step p { margin: 0; line-height: 1.6; }
 
-.shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-bottom: 1.5rem; }
+.shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-bottom: 2rem; }
 
 /* Results */
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 1.25rem; }
@@ -364,7 +365,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
   /* Projects: single column */
   .projects { grid-template-columns: 1fr; gap: 2.5rem; }
-  .thumb.tall { aspect-ratio: 4 / 3; }
+  /* .thumb.tall { aspect-ratio: 2 / 3; } */
 
   /* About: photo first, smaller */
   .about { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 3.5rem; }
