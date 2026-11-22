@@ -53,7 +53,7 @@
 
     <figure class="cs-cover">
       <!-- Replace with: <img src="images/card-game-cover.png" alt="Accessible Tech card game cards laid out on a table"> -->
-      <div class="ph" role="img" aria-label="Card game cover image">Cover image</div>
+      <div class="ph" role="img" aria-label="Card game cover image"><img src="images/projects/Hero-cardgame.png" alt="" /></div>
     </figure>
 
     <section class="cs-section">
@@ -98,14 +98,21 @@
     <section class="cs-section">
       <h2>The solution</h2>
       <div class="cs-body">
-        <div class="shots">
-          <figure class="shot"><div class="ph" role="img" aria-label="Scenario cards">Scenario cards</div><figcaption>Scenario cards</figcaption></figure>
-          <figure class="shot"><div class="ph" role="img" aria-label="Future technology cards">Future tech cards</div><figcaption>Future Technology cards</figcaption></figure>
+        <div class="flip-grid">
+          <figure class="flip-fig">
+            <button type="button" class="flip-card" data-label="Scenario card example"><span class="flip-inner"><span class="face front"><span class="face-label">Scenario card · front</span><img src="images/projects/Scenario 1.png" alt="" loading="lazy" onerror="this.remove()"></span><span class="face back"><span class="face-label">Scenario card · back</span><img src="images/projects/Card back 1.png" alt="" loading="lazy" onerror="this.remove()"></span></span></button>
+            <figcaption><span class="flip-hint">Tap to flip</span></figcaption>
+          </figure>
+          <figure class="flip-fig">
+            <button type="button" class="flip-card" data-label="Future Technology card example"><span class="flip-inner"><span class="face front"><span class="face-label">Future Technology card · front</span><img src="images/projects/Future tech 5.png" alt="" loading="lazy" onerror="this.remove()"></span><span class="face back"><span class="face-label">Future Technology card · back</span><img src="images/projects/Card back 2.png" alt="" loading="lazy" onerror="this.remove()"></span></span></button>
+            <figcaption><span class="flip-hint">Tap to flip</span></figcaption>
+          </figure>
         </div>
         <ul>
           <li><strong>Persona-driven scenario cards:</strong> Scenarios were given to encourage students to design for specific, relatable people instead of disability in general.</li>
           <li><strong>Grouped future tech cards:</strong> Future Technology cards were sorted into themes like biological integration and cognitive support. Grouping them helped students focus on one category without feeling overloaded.</li>
         </ul>
+        <!-- <p class="more-link"><a class="btn-link" href="cards.html">See all 17 cards</a></p> -->
       </div>
     </section>
 
@@ -156,6 +163,7 @@
     </span>
   </a>
 
+  <script src="flip.js" defer></script>
   <script src="connect.js" defer></script>
   <script src="theme.js" defer></script>
   <script src="nav.js" defer></script>

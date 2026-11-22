@@ -103,16 +103,40 @@
     <section class="cs-section">
       <h2>Key features</h2>
       <div class="cs-body">
-        <div class="shots three">
-          <figure class="shot"><div class="ph" role="img" aria-label="Interactive floorplan screen"><img src="images/projects/Map.png" alt="" /></div><figcaption>Live floorplan</figcaption></figure>
-          <figure class="shot"><div class="ph" role="img" aria-label="Homie voice assistant screen"><img src="images/projects/VA.png" alt="" /></div><figcaption>Voice assistant</figcaption></figure>
-          <figure class="shot"><div class="ph" role="img" aria-label="Schedule settings and upcoming tasks screen"><img src="images/projects/Scheduling.png" alt="" /></div><figcaption>Schedule and alerts</figcaption></figure>
+        <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Key feature screens">
+          <div class="carousel-tabs" role="group" aria-label="Choose a feature">
+          <button type="button" class="carousel-tab">Live floorplan</button>
+          <button type="button" class="carousel-tab">Voice assistant</button>
+          <button type="button" class="carousel-tab">Schedule and alerts</button>
+          </div>
+          <div class="carousel-stage">
+            <div class="carousel-track" tabindex="0" aria-label="Screens. Swipe or use the arrow keys to move between them.">
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="1 of 3: Live floorplan">
+            <div class="slide-media"><img src="images/projects/Map.png" alt="Interactive floorplan screen"></div>
+            <figcaption class="slide-text">
+              <h3>Live interactive floorplan</h3>
+              <p>Map markers show where each device is and its activity status.</p>
+            </figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="2 of 3: Voice assistant">
+            <div class="slide-media"><img src="images/projects/VA.png" alt="Homie voice assistant screen"></div>
+            <figcaption class="slide-text">
+              <h3>Homie voice assistant</h3>
+              <p>Confirms each action out loud, such as &ldquo;Setting a timer for 30 minutes for the Roomba&rdquo;.</p>
+            </figcaption>
+          </figure>
+          <figure class="slide" role="group" aria-roledescription="slide" aria-label="3 of 3: Schedule and alerts">
+            <div class="slide-media"><img src="images/projects/Scheduling.png" alt="Schedule settings and upcoming tasks screen"></div>
+            <figcaption class="slide-text">
+              <h3>Schedule settings and task alerts</h3>
+              <p>Date and time selectors only offer valid times, paired with an Upcoming Tasks section.</p>
+            </figcaption>
+          </figure>
+            </div>
+          </div>
+          <p class="carousel-count" aria-hidden="true">1 / 3</p>
+          <p class="sr-only" aria-live="polite" data-live></p>
         </div>
-        <ul>
-          <li><strong>Live interactive floorplan:</strong> map markers show where each device is and it&rsquo;s activity status. </li>
-          <li><strong>Homie voice assistant:</strong> confirms each action out loud, such as &ldquo;Setting a timer for 30 minutes for the Roomba&rdquo;.</li>
-          <li><strong>Schedule settings and task alerts:</strong> date and time selectors only offer valid times, paired with an Upcoming Tasks section.</li>
-        </ul>
       </div>
     </section>
 
@@ -164,6 +188,7 @@
   </a>
 
   <script src="connect.js" defer></script>
+  <script src="carousel.js" defer></script>
   <script src="theme.js" defer></script>
   <script src="nav.js" defer></script>
 </body>
