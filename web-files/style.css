@@ -4,6 +4,7 @@
   --ink: #333533;
   --accent: #476f8d;                /* headings, active links: a darker #5aa9e6 so text stays readable */
   --accent-text: #476f8d;
+  --blue: #3facff;
   --gold: #ffca0a;
   --grey: #333533;
   --tint: color-mix(in srgb, #7fc8f8 40%, #f9f9f9);
@@ -714,7 +715,7 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 .slide-text p { margin: 0; line-height: 1.7; }
 
 .carousel-btn {
-  position: absolute; top: calc(var(--media-h) / 2); transform: translateY(-50%); z-index: 2;
+  position: absolute; top: calc(var(--media-h) / 2); transform: translateY(150%); z-index: 2;
   width: 2.75rem; height: 2.75rem; place-items: center; padding: 0;
   border: 2px solid var(--accent); border-radius: 50%;
   background: var(--bg); color: var(--accent-text); cursor: pointer;
@@ -723,7 +724,7 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 }
 .carousel-btn.prev { left: .75rem; }
 .carousel-btn.next { right: .75rem; }
-.carousel-btn:hover { background: var(--gold); color: #333533; transform: translateY(-50%) scale(1.08); }
+.carousel-btn:hover { background: var(--gold); color: #333533; transform: translateY(150%) scale(1.05); }
 .carousel-btn svg { width: 1.25rem; height: 1.25rem; }
 .carousel-count { margin: .75rem 0 0; text-align: center; font-size: .85rem; color: var(--grey); }
 
